@@ -13,6 +13,7 @@
             <div class="text logo-text">
                 <span class="name">Système de </span>
                 <span class="profession">gestion des véhicules</span>
+                Welcome <?= current_user() ?>
             </div>
         </div>
 
@@ -25,47 +26,47 @@
             <ul class="menu-links">
 
                 <li class="nav-link">
-                    <a href="/vpms/suivie/dashboard.php" id="button">
+                    <a href="dashboard.php" id="button">
                         <i class='bx bx-home-alt icon'></i>
                         <span class="text nav-text">Tableau de bord</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="/vpms/vehicule/gerer-vehicule.php"> <i class='bx bxs-truck icon'></i>
+                    <a href="gerer-vehicule.php"> <i class='bx bxs-truck icon'></i>
                         <span class="text nav-text">Gérer véhicules</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="/vpms/personne/gerer-personne.php"> <i class='bx bxs-user-plus icon'></i>
+                    <a href="gerer-personne.php"> <i class='bx bxs-user-plus icon'></i>
                         <span class="text nav-text">Gérer conducteurs</span>
                     </a>
                 </li>
 
 
                 <li>
-                    <a href="/vpms/association/gerer-association.php"> <i class='bx bxs-analyse icon'></i>
+                    <a href="gerer-association.php"> <i class='bx bxs-analyse icon'></i>
                         <span class="text nav-text">Gérer les permits </span>
                     </a>
                 </li>
 
 
                 <li>
-                    <a href="/vpms/utilisateur/gerer-users.php"> <i class='bx bxs-user icon'></i>
+                    <a href="gerer-users.php"> <i class='bx bxs-user icon'></i>
                         <span class="text nav-text">Gérer les utilisateur </span>
                     </a>
                 </li>
 
 
                 <li>
-                    <a href="/vpms/vehicule/bwdates-report-ds.php"> <i class='bx bxs-report icon'></i>
+                    <a href="bwdates-report-ds.php"> <i class='bx bxs-report icon'></i>
                         <span class="text nav-text"> Rapports</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="/vpms/vehicule/search-vehicule.php"> <i class='bx bx-search icon'></i>
+                    <a href="search-vehicule.php"> <i class='bx bx-search icon'></i>
                         <span class="text nav-text"> Rechercher un véhicule</span>
                     </a>
                 </li>
@@ -74,9 +75,11 @@
         </div>
         <div class="bottom-content">
             <li class="">
-                <a href="/vpms/index.php">
+                <a href="logout.php">
                     <i class='bx bx-log-out icon'></i>
-                    <span class="text nav-text">Déconnexion</span>
+                    <span class="text nav-text">
+                        <p>Déconnexion</p>
+                    </span>
                 </a>
             </li>
 

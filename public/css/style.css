@@ -1,0 +1,307 @@
+/*google roboto font*/
+
+@font-face {
+    font-family: Roboto;
+    src: url(../font/Roboto-Light.ttf);
+}
+
+/*pour toutes les pages hpyigoti_*/
+
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    box-sizing: border-box;
+
+}
+
+
+
+
+/* sidebar */
+
+
+:root {
+
+    --body-color: #E4E9F7;
+    --aside-color: #2f3437;
+    --primary-color: #f77d18;
+    --primary-color-light: #515558;
+    --toggle-color: #fff;
+    --text-color: rgb(230, 230, 230);
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+
+::selection {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+body.dark {
+    --body-color: #18191a;
+    --aside-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+}
+
+
+/* ===== aside ===== */
+.aside {
+    height: 100vh;
+
+    width: 290px;
+    padding: 10px 14px;
+    background: #2f3437;
+    transition: var(--tran-05);
+    z-index: 100;
+
+}
+
+.aside.close {
+
+    width: 88px;
+}
+
+/* ===== Reusable code - Here ===== */
+.aside li {
+    height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.aside .header .image,
+.aside .icon {
+    min-width: 60px;
+    border-radius: 6px;
+}
+
+.aside .icon {
+    min-width: 60px;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.aside .text,
+.aside .icon {
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+.aside .text {
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.aside.close .text {
+    opacity: 0;
+}
+
+/* =========================== */
+
+.aside .header {
+    position: relative;
+}
+
+.aside .header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+.aside .header .logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header .image-text .name {
+    margin-top: 2px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.header .image-text .profession {
+    font-size: 12px;
+    margin-top: -2px;
+    display: block;
+}
+
+.aside .header .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aside .header .image img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+
+.aside .header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-color);
+    color: var(--aside-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+body.dark .aside .header .toggle {
+    color: var(--text-color);
+}
+
+.aside.close .toggle {
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.aside .menu {
+    margin-top: 40px;
+}
+
+.aside li.search-box {
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+.aside li.search-box input {
+    transition: var(--tran-03);
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: var(--tran-05);
+}
+
+.aside li a {
+    list-style: none;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--tran-03);
+}
+
+.aside li a:hover {
+    background-color: var(--primary-color);
+}
+
+.aside li a:hover .icon,
+.aside li a:hover .text {
+    color: var(--text-color);
+}
+
+body.dark .aside li a:hover .icon,
+body.dark .aside li a:hover .text {
+    color: #f77d18;
+}
+
+.aside .menu-bar {
+    height: calc(100% - 55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.menu-bar::-webkit-scrollbar {
+    display: none;
+}
+
+
+.menu-bar .bottom-content .toggle-switch {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--aside-color);
+    transition: var(--tran-04);
+}
+
+body.dark .switch::before {
+    left: 20px;
+}
+
+
+
+
+/* pour le footer*/
+
+.footer {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer div {
+
+    padding: 5px 2px;
+}

@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/lib/codemirror.css?v=5.1.3">
     <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/addon/hint/show-hint.css?v=5.1.3">
     <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/addon/lint/lint.css?v=5.1.3">
-    <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/theme.css?v=5.1.3&nocache=3316759838ltr&server=1">
+    <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/theme.css?v=5.1.3&nocache=1326899864ltr&server=1">
     <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/printview.css?v=5.1.3" media="print" id="printcss">
     <title>127.0.0.1 / 127.0.0.1 | phpMyAdmin 5.1.3</title>
     <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.min.js?v=5.1.3"></script>
@@ -978,6 +978,462 @@ $.extend(defaultValues, {
                     </span>
             </div>
                             <span class="query">SELECT * FROM `users`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="users">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `users`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="users">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `users`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="users">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `users`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="users">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `users`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="user_tokens">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `user_tokens`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="users">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `users`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="users">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `users`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="users">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `users`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="user_tokens">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `user_tokens`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="user_tokens">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `user_tokens`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="user_tokens">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `user_tokens`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="user_tokens">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `user_tokens`</span>
                         </div>
                                             <div class="message history collapsed hide select"
                             targetdb="auth" targettable="users">

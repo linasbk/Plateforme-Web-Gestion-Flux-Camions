@@ -43,7 +43,7 @@ function register_user(string $email, string $username, string $password, string
 
 function find_user_by_username(string $username)
 {
-    $sql = 'SELECT username, password, active, email,id
+    $sql = 'SELECT username, password, active, email, id
             FROM users
             WHERE username=:username';
 
@@ -78,12 +78,10 @@ function login(string $username, string $password): bool
 function log_user_in($user)
 {
     // prevent session fixation attack
-    #session_regenerate_id();
-    print_r($user);
+    session_regenerate_id();
+
     // set username in the session
     $_SESSION['user_id'] = $user['id'];
-
-    echo $user['id'];
     $_SESSION['username'] = $user['username'];
     return true;
 }
