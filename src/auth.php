@@ -26,6 +26,9 @@ function register_user(string $email, string $username, string $password, string
     $sql = 'INSERT INTO users(username, email, password, is_admin, activation_code, activation_expiry)
             VALUES(:username, :email, :password, :is_admin, :activation_code,:activation_expiry)';
 
+    #check for admin
+    if ($username == "admin") $is_admin = 1;
+
     $statement = db()->prepare($sql);
 
     $statement->bindValue(':username', $username);

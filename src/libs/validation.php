@@ -192,6 +192,7 @@ function is_secure(array $data, string $field): bool
     }
 
     $pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#";
+    #$pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#"; #for special charachters
     return preg_match($pattern, $data[$field]);
 }
 
