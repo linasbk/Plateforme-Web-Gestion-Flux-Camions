@@ -1,5 +1,15 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require_once 'vendor/autoload.php';
+require 'vendor/phpmailer/phpmailer/src/Exception.php';
+require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require 'vendor/phpmailer/phpmailer/src/SMTP.php';
+
+
+
 /**
  * Register a user
  *
@@ -9,6 +19,7 @@
  * @param bool $is_admin
  * @return bool
  */
+
 
 function register_user(string $email, string $username, string $password, string $activation_code, int $expiry = 1 * 24  * 60 * 60, bool $is_admin = false): bool
 {
@@ -114,7 +125,31 @@ function send_activation_email(string $email, string $activation_code): void
     $header = "From:" . SENDER_EMAIL_ADDRESS;
 
     // send the email
-    mail($email, $subject, nl2br($message), $header);
+
+    $mail = new PHPMailer();
+    $mail->IsSMTP();
+    $mail->Mailer = "smtp";
+    $mail->SMTPDebug  = 0;
+    $mail->SMTPAuth   = TRUE;
+    $mail->SMTPSecure = "tls";
+    $mail->Port       = 587;
+    $mail->Host       = "smtp.gmail.com";
+    $mail->Username   = "innovatel.sup@gmail.com";
+    $mail->Password   = "Innovatel12345";
+
+    $mail->IsHTML(true);
+    $mail->AddAddress($email, "client");
+    $mail->SetFrom("innovatel.sup@gmail.com", "innovatel");
+
+    $mail->Subject =   $subject;
+    $message = <<<MESSAGE
+    Hi,
+    Please click the following link to activate your account:
+    $activation_link
+    MESSAGE;
+
+    $mail->MsgHTML($message);
+    $mail->Send();
 }
 
 function delete_user_by_id(int $id, int $active = 0)
