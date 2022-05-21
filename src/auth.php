@@ -315,38 +315,26 @@ function activate_user(int $user_id): bool
     return $statement->execute();
 }
 
-function approve_user(int $user_id): bool
-{
-    $sql = 'UPDATE users
-            SET approved = 1,
-                approved_at = CURRENT_TIMESTAMP
-            WHERE id=:id';
+// function approve_user(int $user_id): bool
+// {
+//     $sql = 'UPDATE users
+//             SET approved = 1,
+//                 approved_at = CURRENT_TIMESTAMP
+//             WHERE id=:id';
 
-    $statement = db()->prepare($sql);
-    $statement->bindValue(':id', $user_id, PDO::PARAM_INT);
+//     $statement = db()->prepare($sql);
+//     $statement->bindValue(':id', $user_id, PDO::PARAM_INT);
 
-    return $statement->execute();
-}
+//     return $statement->execute();
+// }
 
-function disapprove_user(int $user_id): bool
-{
-    $sql = 'UPDATE users
-            SET approved = 0,
-                approved_at = CURRENT_TIMESTAMP
-            WHERE id=:id';
-
-    $statement = db()->prepare($sql);
-    $statement->bindValue(':id', $user_id, PDO::PARAM_INT);
-
-    return $statement->execute();
-}
 
 
 function check_approval(int $user_id): bool
 {
 
     $sql = 'select approved from users
-            WHERE id=:id';
+            where id=:id';
     $statement = db()->prepare($sql);
 
     $statement->bindValue(':id', $user_id, PDO::PARAM_INT);
@@ -358,12 +346,18 @@ function check_approval(int $user_id): bool
 
 function toggle_approval(int $user_id): bool
 {
+    $approval = check_approval($user_id) ? 0 : 1;
 
-    if (check_approval($user_id))
+    $sql = 'update users
+    set approved = :approval,
+        approved_at = CURRENT_TIMESTAMP
+    where id=:id';
 
-        return disapprove_user($user_id);
+    $statement = db()->prepare($sql);
+    $statement->bindValue(':id', $user_id, PDO::PARAM_INT);
+    $statement->bindValue(':approval', $approval, PDO::PARAM_INT);
 
-    return approve_user($user_id);
+    return $statement->execute();
 }
 
 function is_user_approved(): bool
