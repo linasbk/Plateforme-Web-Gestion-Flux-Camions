@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/lib/codemirror.css?v=5.1.3">
     <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/addon/hint/show-hint.css?v=5.1.3">
     <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/addon/lint/lint.css?v=5.1.3">
-    <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/theme.css?v=5.1.3&nocache=1326899864ltr&server=1">
+    <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/theme.css?v=5.1.3&nocache=2790505107ltr&server=1">
     <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/printview.css?v=5.1.3" media="print" id="printcss">
     <title>127.0.0.1 / 127.0.0.1 | phpMyAdmin 5.1.3</title>
     <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.min.js?v=5.1.3"></script>
@@ -56,7 +56,7 @@
 
 <script data-cfasync="false" type="text/javascript">
 // <![CDATA[
-CommonParams.setAll({common_query:"",opendb_url:"index.php?route=/database/structure",lang:"en",server:"1",table:"",db:"",token:"2d426d575d4066676d4245324d2c2229",text_dir:"ltr",show_databases_navigation_as_tree:true,pma_text_default_tab:"Browse",pma_text_left_default_tab:"Structure",pma_text_left_default_tab2:false,LimitChars:"50",pftext:"P",confirm:true,LoginCookieValidity:"1440",session_gc_maxlifetime:"1440",logged_in:true,is_https:true,rootPath:"/phpmyadmin/",arg_separator:"&",PMA_VERSION:"5.1.3",auth_type:"config",user:"root"});
+CommonParams.setAll({common_query:"",opendb_url:"index.php?route=/database/structure",lang:"en",server:"1",table:"",db:"",token:"7a4972663d525e3526313b6a6f544846",text_dir:"ltr",show_databases_navigation_as_tree:true,pma_text_default_tab:"Browse",pma_text_left_default_tab:"Structure",pma_text_left_default_tab2:false,LimitChars:"50",pftext:"P",confirm:true,LoginCookieValidity:"1440",session_gc_maxlifetime:"1440",logged_in:true,is_https:true,rootPath:"/phpmyadmin/",arg_separator:"&",PMA_VERSION:"5.1.3",auth_type:"config",user:"root"});
 var firstDayOfCalendar = '0';
 var themeImagePath = '.\/themes\/pmahomme\/img\/';
 var mysqlDocTemplate = '.\/url.php\u003Furl\u003Dhttps\u00253A\u00252F\u00252Fdev.mysql.com\u00252Fdoc\u00252Frefman\u00252F8.0\u00252Fen\u00252F\u002525s.html';
@@ -229,7 +229,7 @@ $(function() {
   <noscript><style>html{display:block}</style></noscript>
 </head>
 <body>
-    <div id="pma_navigation" data-config-navigation-width="240">
+    <div id="pma_navigation" data-config-navigation-width="271">
     <div id="pma_navigation_resizer"></div>
     <div id="pma_navigation_collapser"></div>
     <div id="pma_navigation_content">
@@ -260,7 +260,7 @@ $(function() {
       </div>
       <div id="pma_navigation_tree" class="list_container synced highlight autoexpand">
 
-  <div class="pma_quick_warp"><div class="drop_list"><button title="Recent tables" class="drop_button btn">Recent</button><ul id="pma_recent_list"><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=auth&table=users">`auth`.`users`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=auth&table=user_tokens">`auth`.`user_tokens`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vpmsdb&table=users">`vpmsdb`.`users`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vpmsdb&table=admin">`vpmsdb`.`admin`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vpmsdb&table=suivie">`vpmsdb`.`suivie`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vpmsdb&table=personne">`vpmsdb`.`personne`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vpmsdb&table=tbladmin">`vpmsdb`.`tbladmin`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vpmsdb&table=tblvehicle">`vpmsdb`.`tblvehicle`</a></li></ul></div><div class="drop_list"><button title="Favorite tables" class="drop_button btn">Favorites</button><ul id="pma_favorite_list"><li class="warp_link">There are no favorite tables.</li></ul></div><div class="clearfloat"></div></div>
+  <div class="pma_quick_warp"><div class="drop_list"><button title="Recent tables" class="drop_button btn">Recent</button><ul id="pma_recent_list"><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=auth&table=vehicule">`auth`.`vehicule`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=auth&table=users">`auth`.`users`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=auth&table=user_tokens">`auth`.`user_tokens`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vpmsdb&table=vehicule">`vpmsdb`.`vehicule`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vpmsdb&table=users">`vpmsdb`.`users`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vpmsdb&table=admin">`vpmsdb`.`admin`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vpmsdb&table=suivie">`vpmsdb`.`suivie`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vpmsdb&table=personne">`vpmsdb`.`personne`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vpmsdb&table=tbladmin">`vpmsdb`.`tbladmin`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vpmsdb&table=tblvehicle">`vpmsdb`.`tblvehicle`</a></li></ul></div><div class="drop_list"><button title="Favorite tables" class="drop_button btn">Favorites</button><ul id="pma_favorite_list"><li class="warp_link">There are no favorite tables.</li></ul></div><div class="clearfloat"></div></div>
 
 <div class="clearfloat"></div>
 
@@ -284,7 +284,7 @@ $(function() {
                   <div id="pma_navigation_settings"><div class="page_settings"><form method="post" action="index.php&#x3F;route&#x3D;&#x25;2Fexport&amp;server&#x3D;1" class="config-form disableAjax">
   <input type="hidden" name="tab_hash" value="">
       <input type="hidden" name="check_page_refresh" id="check_page_refresh" value="">
-    <input type="hidden" name="token" value="2d426d575d4066676d4245324d2c2229">
+    <input type="hidden" name="token" value="7a4972663d525e3526313b6a6f544846">
   <input type="hidden" name="submit_save" value="Navi">
 <ul class="tabs responsivetable row">
       <li><a href="#Navi_panel">Navigation panel</a></li>
@@ -309,7 +309,7 @@ $(function() {
 </span><small>Defines the minimum number of items (tables, views, routines and events) to display a filter box.</small></th><td><input type="number" name="NavigationTreeDisplayItemFilterMinimum" id="NavigationTreeDisplayItemFilterMinimum" value="30"><a class="restore-default hide" href="#NavigationTreeDisplayItemFilterMinimum" title="Restore default value"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NumRecentTables">Recently used tables</label><span class="doc"><a href="./doc/html/config.html#cfg_NumRecentTables" target="documentation"><img src="themes/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
 </span><small>Maximum number of recently used tables; set 0 to disable.</small></th><td><input type="number" name="NumRecentTables" id="NumRecentTables" value="10"><a class="restore-default hide" href="#NumRecentTables" title="Restore default value"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NumFavoriteTables">Favorite tables</label><span class="doc"><a href="./doc/html/config.html#cfg_NumFavoriteTables" target="documentation"><img src="themes/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
 </span><small>Maximum number of favorite tables; set 0 to disable.</small></th><td><input type="number" name="NumFavoriteTables" id="NumFavoriteTables" value="10"><a class="restore-default hide" href="#NumFavoriteTables" title="Restore default value"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationWidth">Navigation panel width</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationWidth" target="documentation"><img src="themes/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
-</span><small>Set to 0 to collapse navigation panel.</small></th><td><input type="number" name="NavigationWidth" id="NavigationWidth" value="240"><a class="restore-default hide" href="#NavigationWidth" title="Restore default value"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr></table>
+</span><small>Set to 0 to collapse navigation panel.</small></th><td><input type="number" name="NavigationWidth" id="NavigationWidth" class="custom" value="271"><a class="restore-default hide" href="#NavigationWidth" title="Restore default value"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr></table>
 </fieldset>
 <fieldset class="optbox" id="Navi_tree">
 <legend>Navigation tree</legend>
@@ -638,196 +638,6 @@ $.extend(defaultValues, {
                             <span class="query">SELECT * FROM `users`</span>
                         </div>
                                             <div class="message history collapsed hide select"
-                            targetdb="auth" targettable="user_tokens">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>auth</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `user_tokens`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="auth" targettable="users">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>auth</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `users`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="auth" targettable="users">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>auth</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `users`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="auth" targettable="users">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>auth</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `users`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="auth" targettable="users">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>auth</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `users`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
                             targetdb="auth" targettable="users">
                             <div class="action_content">
                     <span class="action collapse">
@@ -1132,7 +942,7 @@ $.extend(defaultValues, {
                             <span class="query">SELECT * FROM `users`</span>
                         </div>
                                             <div class="message history collapsed hide select"
-                            targetdb="auth" targettable="user_tokens">
+                            targetdb="auth" targettable="users">
                             <div class="action_content">
                     <span class="action collapse">
             Collapse
@@ -1167,7 +977,83 @@ $.extend(defaultValues, {
                             : <span>During current session</span>
                     </span>
             </div>
-                            <span class="query">SELECT * FROM `user_tokens`</span>
+                            <span class="query">SELECT * FROM `users`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="users">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `users`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="users">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `users`</span>
                         </div>
                                             <div class="message history collapsed hide select"
                             targetdb="auth" targettable="users">
@@ -1283,8 +1169,8 @@ $.extend(defaultValues, {
             </div>
                             <span class="query">SELECT * FROM `users`</span>
                         </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="auth" targettable="user_tokens">
+                                            <div class="message history collapsed hide"
+                            targetdb="auth" targettable="users">
                             <div class="action_content">
                     <span class="action collapse">
             Collapse
@@ -1319,10 +1205,10 @@ $.extend(defaultValues, {
                             : <span>During current session</span>
                     </span>
             </div>
-                            <span class="query">SELECT * FROM `user_tokens`</span>
+                            <span class="query">DELETE FROM `users` WHERE `users`.`id` = 10</span>
                         </div>
                                             <div class="message history collapsed hide select"
-                            targetdb="auth" targettable="user_tokens">
+                            targetdb="auth" targettable="users">
                             <div class="action_content">
                     <span class="action collapse">
             Collapse
@@ -1357,10 +1243,10 @@ $.extend(defaultValues, {
                             : <span>During current session</span>
                     </span>
             </div>
-                            <span class="query">SELECT * FROM `user_tokens`</span>
+                            <span class="query">SELECT * FROM `users`</span>
                         </div>
                                             <div class="message history collapsed hide select"
-                            targetdb="auth" targettable="user_tokens">
+                            targetdb="vpmsdb" targettable="vehicule">
                             <div class="action_content">
                     <span class="action collapse">
             Collapse
@@ -1388,14 +1274,52 @@ $.extend(defaultValues, {
                     </span>
                             <span class="text targetdb">
             Database
-                            : <span>auth</span>
+                            : <span>vpmsdb</span>
                     </span>
                             <span class="text query_time">
             Queried time
                             : <span>During current session</span>
                     </span>
             </div>
-                            <span class="query">SELECT * FROM `user_tokens`</span>
+                            <span class="query">SELECT * FROM `vehicule`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="vpmsdb" targettable="vehicule">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>vpmsdb</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `vehicule`</span>
                         </div>
                                             <div class="message history collapsed hide select"
                             targetdb="auth" targettable="user_tokens">
@@ -1473,6 +1397,44 @@ $.extend(defaultValues, {
             </div>
                             <span class="query">SELECT * FROM `users`</span>
                         </div>
+                                            <div class="message history collapsed hide"
+                            targetdb="auth" targettable="vehicule">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">CREATE TABLE `auth`.`vehicule` ( `id` INT(11) NOT NULL AUTO_INCREMENT ,  `matricule` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,  `acces` TINYINT(1) NOT NULL DEFAULT &#039;0&#039; ,  `date` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP ,  `temps` TIME NULL DEFAULT NULL ,    PRIMARY KEY  (`id`)) ENGINE = InnoDB;</span>
+                        </div>
                                             <div class="message history collapsed hide select"
                             targetdb="auth" targettable="users">
                             <div class="action_content">
@@ -1510,6 +1472,44 @@ $.extend(defaultValues, {
                     </span>
             </div>
                             <span class="query">SELECT * FROM `users`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="auth" targettable="vehicule">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>auth</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `vehicule`</span>
                         </div>
                                                 </div><!-- console_message_container -->
             <div class="query_input">
