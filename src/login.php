@@ -19,7 +19,6 @@ if (is_post_request()) {
 
     if ($errors) {
 
-        $errors['approved'] = "Le compte n'a pas été approuvé";
         redirect_with('login.php', ['errors' => $errors, 'inputs' => $inputs]);
     }
 
