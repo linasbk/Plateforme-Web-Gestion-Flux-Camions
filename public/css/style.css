@@ -20,6 +20,201 @@
 }
 
 
+html {
+
+
+    overflow-x: hidden;
+
+}
+
+
+
+body {
+    scrollbar-width: none;
+
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* la page index et la page  oublier le mot de passe*/
+
+.centre {
+    /* pour centrer la boite login */
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.indexbody {
+    /* pour l'image en arrier plan */
+
+
+    background-image: url("../images/background1.jpeg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-color: #171717;
+
+
+}
+
+
+.indextitre {
+    /* pour le titre */
+
+    font-size: 22px;
+    padding-bottom: 1.5em;
+    color: white;
+
+}
+
+.indexbody form div {
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.indexbody label {
+    font-size: 18px;
+    padding-right: 6px;
+    color: white;
+
+}
+
+input {
+    transition: var(--tran-03);
+    border: solid 2px #f18248;
+    border-radius: 6px;
+    font-size: 18px;
+    padding: 8px;
+    margin-right: 0px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+
+}
+
+/* pour le button */
+
+button {
+
+    color: white;
+    border-radius: 6px;
+    padding: 9px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    background-color: #2f3437d8;
+
+}
+
+
+
+button:hover {
+    transition: var(--tran-03);
+    background-color: #f77d18;
+
+}
+
+button:active {
+    transition: var(--tran-03);
+    opacity: .9;
+
+}
+
+
+a button {
+    transition: var(--tran-03);
+    width: 100%;
+
+}
+
+.indexbody label a:hover {
+
+    color: #f77d18;
+
+}
+
+/*body*/
+body {
+    background-color: var(--body-color);
+
+}
+
+
+#header {
+    /* pour le header */
+
+
+    box-shadow: none;
+    color: black;
+    border: none;
+
+}
+
+
+
+/* pour les autres pages */
+
+
+#header {
+    /*pour le header */
+    display: flex;
+    height: 60px;
+    width: 100%;
+
+    position: relative;
+    justify-content: space-between;
+    border-bottom: solid 1px #575c5fab;
+    box-shadow: 0px 2px 4px 0px rgba(145, 144, 144, 0.096);
+    z-index: 2;
+
+}
+
+
+
+.utilisateur img {
+    /* pour le logo d'utilisateur */
+
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    padding-right: 10px;
+    right: 0%;
+    width: 3.5em;
+    padding-bottom: 20px;
+
+}
+
+
+/* pour le footer*/
+
+.footer {
+
+    display: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer div {
+
+    padding: 5px 2px;
+}
+
 
 
 /* sidebar */
@@ -288,20 +483,308 @@ body.dark .switch::before {
 
 
 
+/* pour centrer les pages */
 
-/* pour le footer*/
+body .main {
+    display: flex;
 
-.footer {
 
+    flex-direction: row;
+}
+
+/* pour la page dashboard*/
+
+.dashboard {
+
+    align-items: flex-start;
+    justify-content: space-between;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    position: fixed;
-    bottom: 0;
+
+}
+
+
+
+.dashboard>div {
+    transition: var(--tran-03);
+    display: flex;
+    color: #242a2a;
+    justify-content: space-between;
+    margin: 16px;
+    margin-top: 4em;
+    border: solid 2px #242a2a;
+    border-radius: 4px;
+    padding: 25px 5px 25px 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard>div:hover {
+    transition: var(--tran-03);
+    border: solid 2px #f16e27;
+}
+
+.dashboard>div>div {
+    margin-left: 14px;
+
+}
+
+.dashboard div span {
+
+    color: #242a2a;
+    font-weight: bolder;
+    font-size: 22px;
+
+}
+
+.dashboard div p {
+    color: #242a2a;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.dashboard i {
+
+    padding-left: 8px;
+    color: #f16e27;
+
+}
+
+
+
+
+/*pour les autre page*/
+.contenue {
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.contenue titre {
+    transition: var(--tran-03);
+    text-align: center;
+    color: #242a2a;
+    font-size: 50px;
+    padding: 26px 16px;
+}
+
+
+.contenue titre:hover {
+    transition: var(--tran-03);
+    color: #ff6b00;
+
+}
+
+.background {
+    flex: 2;
+}
+
+.contenue .aucun {
+    text-align: center;
+    color: #f16e27;
+    font-size: 18px;
+    padding: 26px 16px;
+}
+
+
+/*pour les formulaire*/
+
+.contenue form:not(.modifier) {
+    transition: var(--tran-03);
+    color: white;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+
+    border: solid 2px #555a5e8e;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+
+}
+
+
+.contenue form:not(.modifier):hover {
+    transition: var(--tran-03);
+    border: solid 2px #ff6b00;
+}
+
+.modifier .modbutton {
+    padding: 8px 16px;
+    margin-bottom: 6px;
+}
+
+.contenue .form2 {
+
+    transform: translate(+8%, 0);
+
+}
+
+
+.contenue thead>tr {
+
+    border: none;
+}
+
+
+.contenue>form>div {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contenue label {
+    color: #242a2a;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+
+
+}
+
+.contenue input {
+    transition: var(--tran-03);
+    color: #242a2a;
+    font-weight: bolder;
+    border: solid 2px #242a2a;
+    background-color: #dbdbdb;
+
+
+}
+
+
+.contenue input:hover {
+    border: solid 2px #ff6b00;
+
+}
+
+
+
+.contenue h4 {
+    /*pour la page search*/
+    padding: 16px;
+    color: #515558;
+    text-align: center;
+}
+
+/*pour toutes les table*/
+
+
+
+.contenue table {
+    transition: var(--tran-03);
+    color: #242a2a;
+    border: solid 2px #555a5e8e;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-collapse: collapse;
+
+
+}
+
+
+.contenue table tr td {
+    text-align: center;
+
+}
+
+
+
+.contenue textarea {
+    font-size: 20px;
     width: 100%;
 }
 
-.footer div {
+.contenue .wrapper {
+    overflow-wrap: anywhere;
+}
 
-    padding: 5px 2px;
+.contenue table th {
+    text-align: center;
+    font-size: 20px;
+    background-color: #2f3437bd;
+    color: white;
+    padding: 8px 10px;
+
+
+}
+
+
+.contenue table td {
+    transition: var(--tran-03);
+
+    overflow-wrap: anywhere;
+    font-size: 20PX;
+
+    text-align: center;
+    padding: 0px 8px;
+}
+
+
+
+.contenue table tr:hover td {
+    transition: var(--tran-03);
+    background-color: #ccc;
+
+}
+
+.contenue table td a:hover {
+
+    color: #f77d18;
+}
+
+
+
+.centerbutton {
+    align-self: center;
+}
+
+.contenue select {
+    font-size: 22px;
+    color: #242a2a;
+    background-color: #dbdbdb;
+    border: 2px solid #f77d18;
+    border: solid 2px #f18248;
+    border-radius: 6px;
+    font-size: 20PX;
+    padding: 8px;
+    margin-right: 0px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.contenue select:hover {
+
+    border: solid 2px #fa7933;
+
+}
+
+.registerbutton {
+
+    margin-left: 48px;
+}
+
+.switchbuttons {
+
+    background-color: #2f3437;
+    border: 2px solid orange;
+    border-radius: 24px;
+}
+
+.switchbuttons button {
+    border-radius: 24px;
+    color: white;
+    background-color: black;
+    padding: 17px;
+    margin: 0px;
+
+
+}
+
+
+
+.switchbuttons .inactive {
+    background-color: #2f3437;
 }
