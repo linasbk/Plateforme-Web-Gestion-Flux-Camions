@@ -1,8 +1,8 @@
 <?php
 const FILTERS = [
-    'string' => FILTER_SANITIZE_STRING,
+    'string' => FILTER_UNSAFE_RAW,
     'string[]' => [
-        'filter' => FILTER_SANITIZE_STRING,
+        'filter' => FILTER_UNSAFE_RAW,
         'flags' => FILTER_REQUIRE_ARRAY
     ],
     'email' => FILTER_SANITIZE_EMAIL,
@@ -51,7 +51,7 @@ function array_trim(array $items): array
  * @param bool $trim
  * @return array
  */
-function sanitize(array $inputs, array $fields = [], int $default_filter = FILTER_SANITIZE_STRING, array $filters = FILTERS, bool $trim = true): array
+function sanitize(array $inputs, array $fields = [], int $default_filter = FILTER_UNSAFE_RAW, array $filters = FILTERS, bool $trim = true): array
 {
     if ($fields) {
         $options = array_map(fn ($field) => $filters[$field], $fields);

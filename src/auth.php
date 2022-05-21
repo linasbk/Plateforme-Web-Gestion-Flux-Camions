@@ -43,7 +43,7 @@ function register_user(string $email, string $username, string $password, string
 
 function find_user_by_username(string $username)
 {
-    $sql = 'SELECT username, password, active, email, id
+    $sql = 'SELECT username, password, active, email, id , is_admin
             FROM users
             WHERE username=:username';
 
@@ -53,27 +53,7 @@ function find_user_by_username(string $username)
 
     return $statement->fetch(PDO::FETCH_ASSOC);
 }
-/*
 
-#old login 
-function login(string $username, string $password): bool
-{
-    $user = find_user_by_username($username);
-
-    if ($user && is_user_active($user) && password_verify($password, $user['password'])) {
-        // prevent session fixation attack
-        session_regenerate_id();
-
-        // set username in the session
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['username'] = $user['username'];
-
-        return true;
-    }
-
-    return false;
-}
-*/
 
 function log_user_in($user)
 {
@@ -126,29 +106,6 @@ function login(string $username, string $password, bool $remember = false): bool
     return false;
 }
 
-// function is_user_logged_in(): bool
-// {
-//     return isset($_SESSION['username']);
-// }
-
-
-// function require_login(): void
-// {
-//     if (!is_user_logged_in()) {
-//         redirect_to('login.php');
-//     }
-// }
-
-
-
-// function logout(): void
-// {
-//     if (is_user_logged_in()) {
-//         unset($_SESSION['username'], $_SESSION['user_id']);
-//         session_destroy();
-//         redirect_to('login.php');
-//     }
-// }
 
 function is_user_logged_in(): bool
 {
@@ -158,7 +115,7 @@ function is_user_logged_in(): bool
     }
 
     // check the remember_me in cookie
-    $token = filter_input(INPUT_COOKIE, 'remember_me', FILTER_SANITIZE_STRING);
+    $token = filter_input(INPUT_COOKIE, 'remember_me', FILTER_UNSAFE_RAW);
 
     if ($token && token_is_valid($token)) {
 
@@ -171,12 +128,36 @@ function is_user_logged_in(): bool
     return false;
 }
 
+function is_user_admin($username): bool
+{
+
+    $user = find_user_by_username($username);
+    if ($user['is_admin'])
+        return true;
+
+    return false;
+}
+
+
+
+
 function require_login(): void
 {
     if (!is_user_logged_in()) {
         redirect_to('login.php');
     }
 }
+
+
+function require_admin(): void
+{
+    require_login();
+    if (!is_user_admin($_SESSION['username'])) {
+        redirect_to('index.php');
+    }
+}
+
+
 
 function logout(): void
 {
