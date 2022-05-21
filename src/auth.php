@@ -54,6 +54,16 @@ function find_user_by_username(string $username)
     return $statement->fetch(PDO::FETCH_ASSOC);
 }
 
+function find_unnapproved_users()
+{
+    $sql = 'SELECT username, email, id , approved
+            FROM users ';
+
+    $statement = db()->prepare($sql);
+    $statement->execute();
+
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
 
 function log_user_in($user)
 {
