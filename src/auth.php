@@ -63,7 +63,7 @@ function find_user_by_username(string $username)
 function find_unnapproved_users()
 {
     $sql = 'SELECT username, email, id , approved
-            FROM users ';
+            FROM users where is_admin = 0 ';
 
     $statement = db()->prepare($sql);
     $statement->execute();
@@ -224,10 +224,10 @@ function send_activation_email(string $email, string $activation_code): void
     $activation_link = APP_URL . "/activate.php?email=$email&activation_code=$activation_code";
 
     // set email subject & body
-    $subject = 'Please activate your account';
+    $subject = ' Veuillez activer votre compte';
     $message = <<<MESSAGE
-            Hi,
-            Please click the following link to activate your account:
+            Bonjour,
+            Veuillez cliquer sur le lien suivant pour activer votre compte :
             $activation_link
             MESSAGE;
     // email header
@@ -250,13 +250,7 @@ function send_activation_email(string $email, string $activation_code): void
     $mail->AddAddress($email, "client");
     $mail->SetFrom("innovatel.sup@gmail.com", "innovatel");
 
-    $mail->Subject =   $subject;
-    $message = <<<MESSAGE
-    Hi,
-    Please click the following link to activate your account:
-    $activation_link
-    MESSAGE;
-
+    $mail->Subject = $subject;
     $mail->MsgHTML($message);
     $mail->Send();
 }

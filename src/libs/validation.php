@@ -2,16 +2,16 @@
 
 
 const DEFAULT_VALIDATION_ERRORS = [
-    'required' => 'The %s is required',
-    'email' => 'The %s is not a valid email address',
-    'min' => 'The %s must have at least %s characters',
-    'max' => 'The %s must have at most %s characters',
-    'between' => 'The %s must have between %d and %d characters',
-    'same' => 'The %s must match with %s',
-    'alphanumeric' => 'The %s should have only letters and numbers',
-    'secure' => 'The %s must have between 8 and 64 characters and contain at least one number, one upper case letter, one lower case letter and one special character',
-    'unique' => 'The %s already exists',
-    'approved' => "Le compte n'a pas été aprouvé par l'admin"
+    'required' => 'est requis',
+    'email' => "C'est pas une adresse e-mail valide.",
+    'min' => ' doit avoir au moins %s caractères.',
+    'max' => ' doit avoir au plus %s caractères.',
+    'between' => "Le nom d'utilisateur doit avoir entre %d et %d caractères.",
+    'same' => 'Le %s doit correspondre à %s.',
+    'alphanumeric' => "Le nom d'utilisateur ne doit contenir que des lettres et des chiffres.",
+    'secure' => 'Le mot de passe doit avoir entre 8 et 64 caractères et contenir au moins un chiffre, une lettre majuscule, une lettre minuscule et un caractère spécial.',
+    'unique' => 'existe déjà',
+    'approved' => "Le compte n'a pas été aprouvé par l'admin."
 ];
 
 

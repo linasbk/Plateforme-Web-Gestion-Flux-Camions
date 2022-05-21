@@ -18,7 +18,7 @@ if (is_get_request()) {
         if ($user && activate_user($user['id'])) {
             redirect_with_message(
                 'login.php',
-                'You account has been activated successfully. Please login here.'
+                'Votre compte a été activé avec succès. Veuillez vous connecter ici.'
             );
         }
     }

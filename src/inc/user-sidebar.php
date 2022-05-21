@@ -40,13 +40,6 @@
 
 
                 <li>
-                    <a href="gerer-utilisateur.php"> <i class='bx bxs-user icon'></i>
-                        <span class="text nav-text">Gérer les utilisateur </span>
-                    </a>
-                </li>
-
-
-                <li>
                     <a href="bwdates-report-ds.php"> <i class='bx bxs-report icon'></i>
                         <span class="text nav-text"> Rapports</span>
                     </a>
@@ -62,7 +55,7 @@
         </div>
         <div class="bottom-content">
             <li class="">
-                <a href="../logout.php">
+                <a href="logout.php">
                     <i class='bx bx-log-out icon'></i>
                     <span class="text nav-text">
                         <p>Déconnexion</p>

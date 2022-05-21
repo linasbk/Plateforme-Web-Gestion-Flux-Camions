@@ -797,8 +797,8 @@ body .main {
 .bi-unlock,
 .bi-lock {
     color: #5d6268 !important;
-    padding: 10px 0 !important;
-    font-size: 4em !important;
+    margin: 10px 0 !important;
+    font-size: 2em !important;
 }
 
 .bi:hover,

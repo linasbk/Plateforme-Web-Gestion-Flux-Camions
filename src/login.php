@@ -25,7 +25,7 @@ if (is_post_request()) {
     // if login fails
     if (!login($inputs['username'], $inputs['password'], isset($inputs['remember_me']))) {
 
-        $errors['login'] = 'Invalid username or password';
+        $errors['login'] = "Nom d'utilisateur ou mot de passe invalide.";
 
         redirect_with('login.php', [
             'errors' => $errors,

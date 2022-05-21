@@ -3,13 +3,13 @@ require __DIR__ . '/../src/bootstrap.php';
 require __DIR__ . '/../src/register.php';
 ?>
 
-<?php view('header', ['title' => 'Register', 'css' => 'auth']) ?>
+<?php view('header', ['title' => 'Inscription', 'css' => 'auth']) ?>
 
 <form action="register.php" method="post">
-    <h1>Sign Up</h1>
+    <h1>Inscription</h1>
 
     <div>
-        <label for="username">Username:</label>
+        <label for="username">Nom d'utilisateur:</label>
         <input type="text" name="username" id="username" value="<?= $inputs['username'] ?? '' ?>" class="<?= error_class($errors, 'username') ?>">
         <small><?= $errors['username'] ?? '' ?></small>
     </div>
@@ -21,30 +21,34 @@ require __DIR__ . '/../src/register.php';
     </div>
 
     <div>
-        <label for="password">Password:</label>
+        <label for="password">Mot de passe:</label>
         <input type="password" name="password" id="password" value="<?= $inputs['password'] ?? '' ?>" class="<?= error_class($errors, 'password') ?>">
         <small><?= $errors['password'] ?? '' ?></small>
     </div>
 
     <div>
-        <label for="password2">Password Again:</label>
+        <label for="password2">Confirmez le mot de passe:</label>
         <input type="password" name="password2" id="password2" value="<?= $inputs['password2'] ?? '' ?>" class="<?= error_class($errors, 'password2') ?>">
         <small><?= $errors['password2'] ?? '' ?></small>
     </div>
 
-    <div>
+    <!--
+        <div>
         <label for="agree">
-            <input type="checkbox" name="agree" id="agree" value="checked" <?= $inputs['agree'] ?? '' ?> /> I
+            <input type="checkbox" name="agree" id="agree" value="checked" <? #= $inputs['agree'] ?? '' 
+                                                                            ?> /> I
             agree
             with the
             <a href="#" title="term of services">term of services</a>
         </label>
-        <small><?= $errors['agree'] ?? '' ?></small>
+        <small><? #= $errors['agree'] ?? '' 
+                ?></small>
     </div>
+-->
 
-    <button type="submit">Register</button>
+    <button type="submit">Inscription</button>
 
-    <footer>Already a member? <a href="login.php">Login here</a></footer>
+    <footer>Déjà membre? <a href="login.php">Se connecter</a></footer>
 
 </form>
 

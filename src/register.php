@@ -13,17 +13,17 @@ if (is_post_request()) {
         'email' => 'email | required | email | unique: users, email',
         'password' => 'string | required | secure',
         'password2' => 'string | required | same: password',
-        'agree' => 'string | required'
+        #'agree' => 'string | required'
     ];
 
     // custom messages
     $messages = [
         'password2' => [
-            'required' => 'Please enter the password again',
-            'same' => 'The password does not match'
+            'required' => 'Veuiller réécrivez votre mot de passe.',
+            'same' => 'Les mot de passe ne correspond pas.'
         ],
         'agree' => [
-            'required' => 'You need to agree to the term of services to register'
+            'required' => 'Veuiller accepter les terms'
         ]
     ];
 
@@ -45,7 +45,7 @@ if (is_post_request()) {
 
         redirect_with_message(
             'login.php',
-            'Please check your email to activate your account before signing in'
+            'Veuillez vérifier votre e-mail pour activer votre compte avant de vous connecter'
         );
     }
 } else if (is_get_request()) {
