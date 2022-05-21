@@ -26,7 +26,7 @@ function register_user(string $email, string $username, string $password, string
     $sql = 'INSERT INTO users(username, email, password, is_admin, activation_code, activation_expiry)
             VALUES(:username, :email, :password, :is_admin, :activation_code,:activation_expiry)';
 
-    #check for admin
+    #give a  way to set the admin account
     if ($username == "admin") $is_admin = 1;
 
     $statement = db()->prepare($sql);
@@ -43,7 +43,7 @@ function register_user(string $email, string $username, string $password, string
 
 function find_user_by_username(string $username)
 {
-    $sql = 'SELECT username, password, active, email, id , is_admin
+    $sql = 'SELECT username, password, active, email, id , is_admin , approved
             FROM users
             WHERE username=:username';
 
@@ -128,9 +128,9 @@ function is_user_logged_in(): bool
     return false;
 }
 
-function is_user_admin($username): bool
+function is_user_admin(): bool
 {
-
+    $username = $_SESSION['username'];
     $user = find_user_by_username($username);
     if ($user['is_admin'])
         return true;
@@ -151,8 +151,9 @@ function require_login(): void
 
 function require_admin(): void
 {
-    require_login();
-    if (!is_user_admin($_SESSION['username'])) {
+
+    require_login(); // check if the user is logged in
+    if (!is_user_admin()) {
         redirect_to('index.php');
     }
 }
@@ -291,6 +292,19 @@ function activate_user(int $user_id): bool
     $sql = 'UPDATE users
             SET active = 1,
                 activated_at = CURRENT_TIMESTAMP
+            WHERE id=:id';
+
+    $statement = db()->prepare($sql);
+    $statement->bindValue(':id', $user_id, PDO::PARAM_INT);
+
+    return $statement->execute();
+}
+
+function approve_user(int $user_id): bool
+{
+    $sql = 'UPDATE users
+            SET approved = 1,
+                approved_at = CURRENT_TIMESTAMP
             WHERE id=:id';
 
     $statement = db()->prepare($sql);

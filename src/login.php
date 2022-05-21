@@ -1,5 +1,6 @@
 <?php
 
+
 if (is_user_logged_in()) {
     redirect_to('index.php');
 }
@@ -32,6 +33,11 @@ if (is_post_request()) {
 
 
     // login successfully
+
+    if (is_user_admin()) {
+        redirect_to('admin.php');
+    }
+
     redirect_to('index.php');
 } else if (is_get_request()) {
     [$errors, $inputs] = session_flash('errors', 'inputs');
