@@ -23,18 +23,24 @@ require 'remember.php';
 
 function register_user(string $email, string $username, string $password, string $activation_code, int $expiry = 1 * 24  * 60 * 60, bool $is_admin = false): bool
 {
-    $sql = 'INSERT INTO users(username, email, password, is_admin, activation_code, activation_expiry)
-            VALUES(:username, :email, :password, :is_admin, :activation_code,:activation_expiry)';
+    $sql = 'INSERT INTO users(username, email, password, is_admin, activation_code, activation_expiry , approved)
+            VALUES(:username, :email, :password, :is_admin, :activation_code,:activation_expiry ,:approved )';
 
     #give a  way to set the admin account
-    if ($username == "admin") $is_admin = 1;
+    if ($username == "admin") {
+        $is_admin = 1;
+        $is_approved = 1;
+    }
 
     $statement = db()->prepare($sql);
 
     $statement->bindValue(':username', $username);
     $statement->bindValue(':email', $email);
     $statement->bindValue(':password', password_hash($password, PASSWORD_BCRYPT));
+
     $statement->bindValue(':is_admin', (int)$is_admin, PDO::PARAM_INT);
+    $statement->bindValue(':approved', (int)$is_approved, PDO::PARAM_INT);
+
     $statement->bindValue(':activation_code', password_hash($activation_code, PASSWORD_DEFAULT));
     $statement->bindValue(':activation_expiry', date('Y-m-d H:i:s',  time() + $expiry));
 
@@ -147,7 +153,6 @@ function is_user_admin(): bool
 
     return false;
 }
-
 
 
 
@@ -321,4 +326,15 @@ function approve_user(int $user_id): bool
     $statement->bindValue(':id', $user_id, PDO::PARAM_INT);
 
     return $statement->execute();
+}
+
+function is_user_approved(): bool
+{
+
+    $username = $_SESSION['username'];
+    $user = find_user_by_username($username);
+    if ($user['approved'])
+        return true;
+
+    return false;
 }

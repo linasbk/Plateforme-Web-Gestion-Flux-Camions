@@ -33,12 +33,11 @@ require __DIR__ . '/../src/login.php';
         </label>
         <small><?= $errors['agree'] ?? '' ?></small>
     </div>
-
     <section>
         <button type="submit">Login</button>
         <a href="register.php">Register</a>
     </section>
-
+    <small><?= $errors['approved'] ?? '' ?></small>
 </form>
 
 <?php view('footer') ?>
