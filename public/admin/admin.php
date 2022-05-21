@@ -1,8 +1,8 @@
 <?php
 
-require __DIR__ . '/../src/bootstrap.php';
+require __DIR__ . '/../../src/bootstrap.php';
 require_admin();
-require __DIR__ . '/../src/approve.php';
+require __DIR__ . '/../../src/approve.php';
 ?>
 
 <?php view('header', ['title' => 'Admin']) ?>
