@@ -7,7 +7,6 @@ require __DIR__ . '/../src/approve.php';
 
 <?php view('header', ['title' => 'Admin']) ?>
 
-<p>hello admin</p>
 
 <div class="main">
     <?php view('sidebar') ?>
@@ -17,8 +16,6 @@ require __DIR__ . '/../src/approve.php';
             <titre>
                 <strong>Gérer les utilisateurs</strong>
             </titre>
-
-
 
             <table>
 
@@ -44,7 +41,7 @@ require __DIR__ . '/../src/approve.php';
                         <td>
 
                             <form method="post" class="modifier">
-                                <button id="submit" name="submit">Approuver</button>
+                                <button id="submit" name="submit" onclick="hideMessage() ">Approuver</button>
                                 <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
                             </form>
 
