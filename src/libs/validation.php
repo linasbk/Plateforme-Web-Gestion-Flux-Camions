@@ -11,7 +11,7 @@ const DEFAULT_VALIDATION_ERRORS = [
     'alphanumeric' => 'The %s should have only letters and numbers',
     'secure' => 'The %s must have between 8 and 64 characters and contain at least one number, one upper case letter, one lower case letter and one special character',
     'unique' => 'The %s already exists',
-    'approved' => "Le compte n'a pas été approuvé"
+    'approved' => "Le compte n'a pas été aprouvé par l'admin"
 ];
 
 

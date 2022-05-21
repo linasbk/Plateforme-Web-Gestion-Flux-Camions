@@ -328,6 +328,44 @@ function approve_user(int $user_id): bool
     return $statement->execute();
 }
 
+function disapprove_user(int $user_id): bool
+{
+    $sql = 'UPDATE users
+            SET approved = 0,
+                approved_at = CURRENT_TIMESTAMP
+            WHERE id=:id';
+
+    $statement = db()->prepare($sql);
+    $statement->bindValue(':id', $user_id, PDO::PARAM_INT);
+
+    return $statement->execute();
+}
+
+
+function check_approval(int $user_id): bool
+{
+
+    $sql = 'select approved from users
+            WHERE id=:id';
+    $statement = db()->prepare($sql);
+
+    $statement->bindValue(':id', $user_id, PDO::PARAM_INT);
+    $statement->execute();
+    $result = $statement->fetch();
+
+    return $result['approved'];
+}
+
+function toggle_approval(int $user_id): bool
+{
+
+    if (check_approval($user_id))
+
+        return disapprove_user($user_id);
+
+    return approve_user($user_id);
+}
+
 function is_user_approved(): bool
 {
 

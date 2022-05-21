@@ -15,7 +15,11 @@ if (is_post_request()) {
     if (isset($_POST['submit'])) {
 
         $id = $_POST['id'];
-        approve_user($id);
-        echo "<p id='connectMsg' class='alert alert-success'>utilisateur approuvé</p>";
+        toggle_approval($id);
+        if (check_approval($id)) {
+            echo "<p id='connectMsg' class='alert alert-success'>Compte deverrouillé </p>";
+        } else {
+            echo "<p id='connectMsg' class='alert alert-success'>Compte verrouillé</p>";
+        }
     }
 }
