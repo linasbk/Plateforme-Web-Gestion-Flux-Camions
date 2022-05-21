@@ -796,14 +796,14 @@ body .main {
 .bi,
 .bi-unlock,
 .bi-lock {
-    color: #5d6268;
-    padding: 10px 0;
-    font-size: 4em;
+    color: #5d6268 !important;
+    padding: 10px 0 !important;
+    font-size: 4em !important;
 }
 
 .bi:hover,
 .bi-unlock:hover,
 .bi-lock:hover {
-    color: #fa7933;
-    cursor: pointer;
+    color: #fa7933 !important;
+    cursor: pointer !important;
 }

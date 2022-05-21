@@ -41,7 +41,7 @@ require __DIR__ . '/../../src/approve.php';
                         <td>
 
                             <form method="post" class="modifier">
-                                <?php $labelname = rand(50, 100);
+                                <?php $labelname = rand(5, 50000);
                                 if (check_approval($user['id']))
 
                                     echo '<label for="' . $labelname . '"><i class="bi bi-lock">';
