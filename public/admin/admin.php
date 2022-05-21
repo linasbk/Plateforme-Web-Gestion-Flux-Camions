@@ -41,8 +41,15 @@ require __DIR__ . '/../../src/approve.php';
                         <td>
 
                             <form method="post" class="modifier">
-                                <button id="submit" name="submit" onclick="hideMessage() ">Approuver</button>
-                                <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+                                <?php $labelname = rand(50, 100);
+                                if (check_approval($user['id']))
+
+                                    echo '<label for="' . $labelname . '"><i class="bi bi-lock">';
+                                else echo '<label for="' . $labelname . '"<i class="bi bi-unlock">';
+                                ?>
+
+                                </i><input class="ver" type="submit" id="<?php echo $labelname ?>" name="submit"></label>
+                                <input type="hidden" name="id" value="<?php echo $user["id"]; ?>">
                             </form>
 
                         </td>

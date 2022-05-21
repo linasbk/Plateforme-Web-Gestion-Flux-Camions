@@ -788,3 +788,22 @@ body .main {
 .switchbuttons .inactive {
     background-color: #2f3437;
 }
+
+.ver {
+    display: none;
+}
+
+.bi,
+.bi-unlock,
+.bi-lock {
+    color: #5d6268;
+    padding: 10px 0;
+    font-size: 4em;
+}
+
+.bi:hover,
+.bi-unlock:hover,
+.bi-lock:hover {
+    color: #fa7933;
+    cursor: pointer;
+}
