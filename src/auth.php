@@ -173,6 +173,13 @@ function require_admin(): void
     }
 }
 
+function redirect_admin(): void
+{
+    if (is_user_admin()) {
+        redirect_to('admin/admin.php');
+    }
+}
+
 
 
 function logout(): void

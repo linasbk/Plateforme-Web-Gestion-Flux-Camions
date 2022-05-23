@@ -51,7 +51,7 @@ require_admin();
 
                                             echo "<td>" . "
                                             <img alt='image' src='/auth/files/$hour/$word'
-                                            width='80' height='50'>
+                                            width='120' height='70' style='padding:2px;'>
                                            " . "</td>";
                                         } else echo "<td>" . htmlspecialchars($word) . "</td>";
                                 }

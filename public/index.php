@@ -2,6 +2,7 @@
 
 require __DIR__ . '/../src/bootstrap.php';
 require_login();
+redirect_admin();
 ?>
 
 <?php view('header', ['title' => 'Dashboard']) ?>
