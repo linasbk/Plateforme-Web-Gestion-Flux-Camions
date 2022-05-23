@@ -33,14 +33,27 @@ require_admin();
                     </tr>
                     <tr>
                         <?php
+                        $pattern = '/^.*\.(jpg|jpeg|png)$/i';
+
                         $f = fopen("../files/-2019-01-02-.csv", "r");
                         fgetcsv($f); #skips the first line
-                        $columns = array(1, 3); #select wich columns you want to show
                         while (($line = fgetcsv($f)) !== false) {
                             echo "<tr>";
                             foreach ($line as $cell) { {
                                     $value = explode(';', $cell);
-                                    foreach ($value as $word)  echo "<td>" . htmlspecialchars($word) . "</td>";
+                                    foreach ($value as $word)
+
+                                        if (preg_match($pattern, $word, $matches)) {
+                                            $hour = explode("_", $word);
+                                            $hour =  $hour[1];
+                                            $hour = explode("-", $hour);
+                                            $hour =  $hour[0];
+
+                                            echo "<td>" . "
+                                            <img alt='image' src='/auth/files/$hour/$word'
+                                            width='80' height='50'>
+                                           " . "</td>";
+                                        } else echo "<td>" . htmlspecialchars($word) . "</td>";
                                 }
                             }
                             echo "</tr>\n";
