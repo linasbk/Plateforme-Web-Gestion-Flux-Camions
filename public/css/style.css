@@ -252,7 +252,7 @@ body.dark {
 
 /* ===== aside ===== */
 .aside {
-    height: 100vh;
+
 
     width: 290px;
     padding: 10px 14px;
@@ -712,14 +712,11 @@ body .main {
 
 .contenue table td {
     transition: var(--tran-03);
-
     overflow-wrap: anywhere;
     font-size: 20PX;
-
     text-align: center;
     padding: 0px 8px;
 }
-
 
 
 .contenue table tr:hover td {
@@ -804,4 +801,8 @@ body .main {
 .bi-lock:hover {
     color: #fa7933 !important;
     cursor: pointer !important;
+}
+
+.imagetd {
+    display: block;
 }

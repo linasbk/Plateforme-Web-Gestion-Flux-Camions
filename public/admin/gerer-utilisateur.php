@@ -42,7 +42,7 @@ require __DIR__ . '/../../src/approve.php';
 
                             <form method="post" class="modifier">
                                 <?php $labelname = rand(5, 50000);
-                                if (check_approval($user['id']))
+                                if (!check_approval($user['id']))
 
                                     echo '<label for="' . $labelname . '"><i class="bi bi-lock">';
                                 else echo '<label for="' . $labelname . '"<i class="bi bi-unlock">';

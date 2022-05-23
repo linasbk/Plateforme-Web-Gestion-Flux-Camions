@@ -238,7 +238,7 @@ function send_activation_email(string $email, string $activation_code): void
             $activation_link
             MESSAGE;
     // email header
-    $header = "From:" . "innovatelsup@gmail.com";
+    $header = "From: " . "innovatelsup@gmail.com";
 
     // send the email
 
