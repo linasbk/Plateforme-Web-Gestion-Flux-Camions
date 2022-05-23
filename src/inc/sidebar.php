@@ -7,13 +7,13 @@
     <header class="header">
         <div class="image-text">
             <span class="image">
-                <img src="/vpms/images/logo.png" alt="">
+                <img src="../images/logo.png" alt="">
             </span>
 
             <div class="text logo-text">
                 <span class="name">Système de </span>
                 <span class="profession">gestion des véhicules</span>
-                Welcome <?= current_user() ?>
+                Bonjour <?= current_user() ?>
             </div>
         </div>
 

@@ -10,7 +10,6 @@ require_login();
 
 
 <div class="main">
-    <?php view('user-sidebar') ?>
     <div class="background">
         <div class="contenue">
 
