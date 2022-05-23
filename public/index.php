@@ -6,6 +6,16 @@ require_login();
 
 <?php view('header', ['title' => 'Dashboard']) ?>
 
-<?php view('user-sidebar') ?>
 
-<?php view('footer') ?>
+
+
+<div class="main">
+    <?php view('user-sidebar') ?>
+    <div class="background">
+        <div class="contenue">
+
+            <titre>
+                <strong>Bonjour <?= current_user() ?> </strong>
+            </titre>
+
+            <?php view('footer') ?>
