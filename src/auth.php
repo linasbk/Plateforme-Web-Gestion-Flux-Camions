@@ -155,6 +155,17 @@ function is_user_admin(): bool
 }
 
 
+function is_user_read_admin(): bool
+{
+    $username = $_SESSION['username'];
+    $user = find_user_by_username($username);
+    if ($user['is_read_admin'])
+        return true;
+
+    return false;
+}
+
+
 
 function require_login(): void
 {
@@ -172,6 +183,9 @@ function require_admin(): void
         redirect_to('index.php');
     }
 }
+
+
+
 
 function redirect_admin(): void
 {

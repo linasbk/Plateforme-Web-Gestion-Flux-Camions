@@ -98,7 +98,7 @@ require_admin();
             flag = 0;
             // Set image size to original
             img.style.transform = "scale(1)";
-            img.style.transition = "transform 0.35s ease";
+            img.style.transition = "transform 0.55s ease";
             img.classList.remove("center");
 
 
@@ -108,7 +108,7 @@ require_admin();
             // Set image size to 1.5 times original
             img.style.transform = "scale(8)";
             // Animation effect
-            img.style.transition = "transform 0.35s ease";
+            img.style.transition = "transform 0.55s ease";
 
         }
         console.log("after: " + flag)
