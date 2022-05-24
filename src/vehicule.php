@@ -1,5 +1,11 @@
 <?php
+function formatdate($date)
+{
 
+    $timestamp = strtotime($date);
+    $date =  "20" . date('y-n-d', $timestamp);
+    return $date;
+}
 
 function csv_table($date, $searchcolumn, $searchvalue)
 {

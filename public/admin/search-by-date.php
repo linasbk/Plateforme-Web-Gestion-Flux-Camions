@@ -34,11 +34,11 @@ require __DIR__ . '/../../src/vehicule.php';
             </form>
 
             <?php if (isset($_POST['search'])) {
-                $tdate = $_POST['todate'];
-                $timestamp = strtotime($tdate);
-                $date =  "20" . date('y-n-d', $timestamp);
 
-                csv_table($date, 0, 'IN');
+                $fromdate =  date($_POST['fromdate']);
+                $todate =  date($_POST['todate']);
+
+                csv_table($todate, 0, 'IN');
             } ?>
 
             <?php view('footer') ?>
