@@ -47,8 +47,8 @@
 
 
                 <li>
-                    <a href="bwdates-report-ds.php"> <i class='bx bxs-report icon'></i>
-                        <span class="text nav-text"> Rapports</span>
+                    <a href="search-by-date.php"> <i class='bx bxs-report icon'></i>
+                        <span class="text nav-text">Rapports</span>
                     </a>
                 </li>
 

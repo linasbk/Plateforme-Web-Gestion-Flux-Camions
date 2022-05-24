@@ -172,6 +172,7 @@ details summary {
 }
 
 form {
+    align-items: center;
     width: 400px
 }
 

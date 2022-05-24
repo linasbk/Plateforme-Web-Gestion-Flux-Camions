@@ -253,7 +253,7 @@ body.dark {
 /* ===== aside ===== */
 .aside {
 
-
+    height: 100vh;
     width: 290px;
     padding: 10px 14px;
     background: #2f3437;
