@@ -17,7 +17,7 @@ require __DIR__ . '/../../src/vehicule.php';
                 Rechercher véhicule
             </titre>
 
-            <form class="formsearch" action="" method="post" enctype="multipart/form-data" class="form-horizontal" name="search">
+            <form class="formsearch" method="post" enctype="multipart/form-data" name="search" id="formsearch">
 
 
                 <label for="text-input" style="font-size:24px;">Rechercher véhicule
@@ -38,78 +38,12 @@ require __DIR__ . '/../../src/vehicule.php';
                 </div>
 
 
-
-
-                <button type="submit" style="width:100%;" name="search">Search</button>
+                <button type="submit" style="width:100%;" onclick="hidetab()" name="search">Search</button>
             </form>
+            <?php if (isset($_POST['search'])) {
+                csv_table("2022-5-23", $_POST['searchtype'], $_POST['searchdata']);
+            } ?>
 
-
-
-            <?php
-
-            if (isset($_POST['search'])) {
-                echo "<table>
- 
-            <tr>
-                <th>Accès</th>
-                <th>Matricule</th>
-                <th>Date</th>
-                <th>Heure</th>
-                <th>image</th>
-                <th>Sûreté</th>
-            
-            </tr>
-            <tr>
-              ";
-
-
-                $searchcolumn = $_POST['searchtype'];
-                $searchvalue = $_POST['searchdata'];
-
-
-                $date = "20" . date('y-n-d');
-
-                # $f = fopen("../files/-$date-.csv", "r");
-                $f = fopen("../files/-2022-5-23-.csv", "r");
-
-                fgetcsv($f); #skips the first line
-
-                $extension = '/^.*\.(jpg|jpeg|png)$/i';
-
-                while (($line = fgetcsv($f)) !== false) {
-
-                    echo "<tr>";
-
-                    foreach ($line as $cell) {
-
-                        $value = explode(';', $cell);
-
-                        if (isset($value[$searchcolumn]) && $value[$searchcolumn] == $searchvalue) {
-
-                            foreach ($value as $word) {
-
-                                if (preg_match($extension, $word, $matches)) {
-
-
-                                    $hour = explode("_", $word);
-                                    $hour =  $hour[1];
-                                    $hour = explode("-", $hour);
-                                    $hour =  $hour[0];
-
-                                    echo "<td class='imagetd'>" . "<img alt='image' class='' onclick='show(this)' src='/auth/files/$hour/$word'
-                                                        width='120' height='70' style='padding:2px;'> " . "</td>";
-                                } else echo "<td>" . htmlspecialchars($word) . "</td>";
-                            }
-                        }
-                    }
-                    echo "</tr>\n";
-                }
-                fclose($f);
-                echo "   </tr>
-                         </table>";
-            }
-
-            ?>
             <?php view('footer') ?>
         </div>
     </div>
