@@ -816,3 +816,13 @@ body .main {
     align-items: center;
     margin-bottom: 10px;
 }
+
+.center {
+    z-index: 5;
+    position: absolute;
+    top: 45%;
+    right: 40%;
+    margin: 0px;
+    padding: 0px;
+
+}

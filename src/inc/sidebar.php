@@ -23,7 +23,7 @@
             <ul class="menu-links">
 
                 <li class="nav-link">
-                    <a href="dashboard.php" id="button">
+                    <a href="admin.php" id="button">
                         <i class='bx bx-home-alt icon'></i>
                         <span class="text nav-text">Tableau de bord</span>
                     </a>
