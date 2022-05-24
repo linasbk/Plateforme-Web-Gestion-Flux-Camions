@@ -35,8 +35,8 @@ require __DIR__ . '/../../src/vehicule.php';
 
             <?php if (isset($_POST['search'])) {
 
-                $fromdate =  date($_POST['fromdate']);
-                $todate =  date($_POST['todate']);
+                $fromdate =  formatdate($_POST['fromdate']);
+                $todate = formatdate($_POST['todate']);
 
                 csv_table($todate, 0, 'IN');
             } ?>
