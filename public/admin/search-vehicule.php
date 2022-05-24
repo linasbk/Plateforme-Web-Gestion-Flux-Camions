@@ -2,10 +2,10 @@
 
 require __DIR__ . '/../../src/bootstrap.php';
 require_admin();
-require __DIR__ . '/../../src/approve.php';
+require __DIR__ . '/../../src/vehicule.php';
 ?>
 
-<?php view('header', ['title' => 'rechercher véhicule par plaque']) ?>
+<?php view('header', ['title' => 'rechercher véhicule']) ?>
 
 
 <div class="main">
@@ -17,31 +17,30 @@ require __DIR__ . '/../../src/approve.php';
                 Rechercher véhicule
             </titre>
 
+            <form class="formsearch" action="" method="post" enctype="multipart/form-data" class="form-horizontal" name="search">
 
 
-            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal" name="search">
+                <label for="text-input" style="font-size:24px;">Rechercher véhicule
+                </label>
+                <input type="text" id="searchdata" name="searchdata" style="width: 100%;" required="required" autofocus="autofocus">
 
-                <div>
-                    <div><label for="text-input" class=" form-control-label">Search
-                        </label></div>
-                    <div><input type="text" id="searchdata" name="searchdata" class="form-control" required="required" autofocus="autofocus"></div>
-                    <div class="searchselect">
+                <div class="searchselect">
 
-                        <label for="searchtype">rechercher par:</label>
-                        <select id="searchtype" name="searchtype">
-                            <option value="0">Accès</option>
-                            <option value="1">Matricule</option>
-                            <option value="2">Date</option>
-                            <option value="3">Heure</option>
-                            <option value="4">image</option>
-                            <option value="5">Sûreté</option>
-                        </select>
-                    </div>
-
+                    <label for="searchtype">rechercher par:</label>
+                    <select id="searchtype" name="searchtype">
+                        <option value="0">Accès</option>
+                        <option value="1">Matricule</option>
+                        <option value="2">Date</option>
+                        <option value="3">Heure</option>
+                        <option value="4">image</option>
+                        <option value="5">Sûreté</option>
+                    </select>
                 </div>
 
 
-                <p style="text-align: center;"> <button type="submit" class="btn btn-primary btn-sm" name="search">Search</button></p>
+
+
+                <button type="submit" style="width:100%;" name="search">Search</button>
             </form>
 
 

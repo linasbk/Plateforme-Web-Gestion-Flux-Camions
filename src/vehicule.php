@@ -1,56 +1,27 @@
+<script>
+    flag = 0;
+
+    function show(el) {
+
+        img = el;
+
+        if (flag == 1) {
+            flag = 0;
+            // Set image size to original
+            img.style.transform = "scale(1)";
+            img.style.transition = "transform 0.80s ease";
+            img.classList.remove("center");
 
 
-<?php
+        } else if (flag == 0) {
+            flag = 1;
+            img.classList.add("center");
+            // Set image size to 1.5 times original
+            img.style.transform = "scale(8)";
+            // Animation effect
+            img.style.transition = "transform 0.7s ease";
 
-function csv_magic($searchcolumn, $searchvalue)
-{
-    echo "<table>
-    <tr>
-        <th>Accès</th>
-        <th>Matricule</th>
-        <th>Date</th>
-        <th>Heure</th>
-        <th>image</th>
-        <th>Sûreté</th>
-    </tr>
-    <tr>";
-
-    # $f = fopen("../files/-$date-.csv", "r");
-    $f = fopen("../files/-2022-5-23-.csv", "r");
-
-    fgetcsv($f); #skips the first line
-
-    $extension = '/^.*\.(jpg|jpeg|png)$/i';
-
-    while (($line = fgetcsv($f)) !== false) {
-
-        echo "<tr>";
-
-        foreach ($line as $cell) {
-
-            $value = explode(';', $cell);
-
-            if (isset($value[$searchcolumn]) && $value[$searchcolumn] == $searchvalue) {
-
-                foreach ($value as $word) {
-
-                    if (preg_match($extension, $word, $matches)) {
-
-
-                        $hour = explode("_", $word);
-                        $hour =  $hour[1];
-                        $hour = explode("-", $hour);
-                        $hour =  $hour[0];
-
-                        echo "<td class='imagetd'>" . "<img alt='image' class='' onclick='show(this)' src='/auth/files/$hour/$word'
-                            width='120' height='70' style='padding:2px;'> " . "</td>";
-                    } else echo "<td>" . htmlspecialchars($word) . "</td>";
-                }
-            }
         }
-        echo "</tr>\n";
+        console.log("after: " + flag)
     }
-    fclose($f);
-    echo "</tr>
-    </table>";
-}
+</script>
