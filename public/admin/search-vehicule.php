@@ -17,7 +17,7 @@ require __DIR__ . '/../../src/vehicule.php';
                 Rechercher véhicule
             </titre>
 
-            <form class="formsearch" method="post" enctype="multipart/form-data" name="search" id="formsearch">
+            <form class="formsearch" action="" method="post" enctype="multipart/form-data" name="search" id="formsearch">
 
 
                 <label for="text-input" style="font-size:24px;">Rechercher véhicule
@@ -38,8 +38,9 @@ require __DIR__ . '/../../src/vehicule.php';
                 </div>
 
 
-                <button type="submit" style="width:100%;" onclick="hidetab()" name="search">Search</button>
+                <button type="submit" style="width:100%;" onclick="hidetab()" name="search">Rechercher</button>
             </form>
+
             <?php if (isset($_POST['search'])) {
                 csv_table("2022-5-23", $_POST['searchtype'], $_POST['searchdata']);
             } ?>

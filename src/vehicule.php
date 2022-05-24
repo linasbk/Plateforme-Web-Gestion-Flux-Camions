@@ -1,4 +1,6 @@
 <?php
+
+
 function csv_table($date, $searchcolumn, $searchvalue)
 {
     echo "<table id='searchtable' class=''>
@@ -59,7 +61,7 @@ function search_csv($date, $searchcolumn, $searchvalue)
 
             $value = explode(';', $cell);
 
-            if (isset($value[$searchcolumn]) && $value[$searchcolumn] == $searchvalue) {
+            if (isset($value[$searchcolumn]) && stripos($value[$searchcolumn], $searchvalue) !== false) {
 
                 foreach ($value as $word) {
 
