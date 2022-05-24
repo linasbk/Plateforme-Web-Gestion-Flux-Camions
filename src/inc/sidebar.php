@@ -1,3 +1,6 @@
+<?php
+#needs reimplemintation
+?>
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
 <nav class="aside close">
@@ -72,3 +75,20 @@
     </div>
 
 </nav>
+
+<script>
+    const body = document.querySelector('body'),
+        aside = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeText = body.querySelector(".mode-text");
+
+    toggle.addEventListener("click", () => {
+        aside.classList.toggle("close");
+    })
+    searchBtn.addEventListener("click", () => {
+        aside.classList.remove("close");
+    })
+
+    ;
+</script>

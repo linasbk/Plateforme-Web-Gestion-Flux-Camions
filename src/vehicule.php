@@ -67,7 +67,7 @@ function search_csv($date, $searchcolumn, $searchvalue)
 
             $value = explode(';', $cell);
 
-            if (isset($value[$searchcolumn]) && stripos($value[$searchcolumn], $searchvalue) !== false) {
+            if (isset($value[$searchcolumn]) && stripos($value[$searchcolumn], trim($searchvalue)) !== false) {
 
                 foreach ($value as $word) {
 

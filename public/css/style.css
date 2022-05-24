@@ -27,7 +27,7 @@ html {
 
 
 body {
-
+    height: 100%;
     scrollbar-width: none;
 
 }
@@ -146,7 +146,7 @@ a button {
 
 /*body*/
 body {
-    height: 100vh;
+    height: 100%;
     background-color: var(--body-color);
 
 }
@@ -254,7 +254,8 @@ body.dark {
 /* ===== aside ===== */
 .aside {
 
-
+    position: fixed;
+    height: 100%;
     width: 290px;
     padding: 10px 14px;
     background: #2f3437;
@@ -482,14 +483,14 @@ body.dark .switch::before {
 
 
 main {
-    height: 100vh;
+    height: 100%;
 }
 
 /* pour centrer les pages */
 
 body .main {
     display: flex;
-    height: 100vh;
+    height: 100%;
 
     flex-direction: row;
 }
