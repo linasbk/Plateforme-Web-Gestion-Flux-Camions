@@ -9,7 +9,7 @@ require __DIR__ . '/../src/register.php';
 <body class="indexbody">
 
     <div class="login-wrapper">
-        <div action="" class="form-contenue">
+        <div action="" class="form-contenue register">
             <h1 style="text-align:center;">Inscription</h1>
             <div class="card-body" id="formContainer">
 
