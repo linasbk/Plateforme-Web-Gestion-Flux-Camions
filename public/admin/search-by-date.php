@@ -2,10 +2,9 @@
 
 require __DIR__ . '/../../src/bootstrap.php';
 require_admin();
-require __DIR__ . '/../../src/vehicule.php';
 ?>
 
-<?php view('header', ['title' => 'rechercher véhicule']) ?>
+<?php view('header', ['title' => 'rechercher véhicule', 'js' => 'vehicule']) ?>
 
 
 <div class="main">

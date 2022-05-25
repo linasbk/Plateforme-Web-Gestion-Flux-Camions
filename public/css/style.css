@@ -492,7 +492,7 @@ body .main {
     display: flex;
     height: 100%;
 
-    flex-direction: row;
+    flex-direction: column;
 }
 
 /* pour la page dashboard*/
@@ -826,4 +826,84 @@ body .main {
     margin: 0px;
     padding: 0px;
 
+}
+
+.searchbar {
+    display: flex;
+    height: 55px;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+/*for the searchbar*/
+.searchbar .search {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.searchinput {
+    margin-top: 11px;
+    margin-bottom: 1px;
+
+    border-radius: 6px;
+    font-size: 16px;
+    color: white;
+    border: 2px solid #515558;
+    background-color: #515558;
+    width: 115px;
+    border: none;
+    border-radius: 0;
+}
+
+.searchcon:hover {
+    border: none;
+    background-color: #515558 !important;
+}
+
+.searchcon {
+    height: 95% !important;
+    border: none;
+    background-color: #515558 !important;
+}
+
+.searchcon {
+
+    border-radius: 6px 0px 0px 6px !important;
+}
+
+.aside li {
+    height: 51px !important;
+}
+
+/*for the select*/
+
+.searchselect1 {
+    text-align: center;
+    width: 85px;
+    font-size: 17px;
+    margin-top: 8px;
+    padding: 14px 2px;
+    align-self: center;
+    color: white;
+    background-color: #515558;
+    margin-top: 11px;
+    border-left: 1px solid #5d6268;
+    border-radius: 0px 6px 6px 0px !important;
+}
+
+
+
+.searchbutton1 {
+
+    width: 30px;
+    border-radius: 0;
+    background-color: white;
+
+    padding: 0px 13px;
+    margin-top: 7px;
+    margin-bottom: 9px;
+    font-size: 15px;
 }
