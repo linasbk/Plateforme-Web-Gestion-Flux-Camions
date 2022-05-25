@@ -48,7 +48,10 @@ require __DIR__ . '/../src/register.php';
                         <footer class="insfooter">Déjà membre? <a href="login.php">Se connecter</a></footer>
 
                     </form>
+
                 </div>
             </div>
+
         </div>
+
         <?php view('footer') ?>

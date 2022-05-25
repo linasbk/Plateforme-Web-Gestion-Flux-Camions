@@ -11,11 +11,6 @@ require __DIR__ . '/../src/login.php';
 <body class="indexbody">
 
     <div class="login-wrapper">
-        <?php if (isset($errors['login'])) : ?>
-            <div class="alert alert-error">
-                <?= $errors['login'] ?>
-            </div>
-        <?php endif ?>
 
         <div action="" class="form-contenue">
 
@@ -30,15 +25,22 @@ require __DIR__ . '/../src/login.php';
                         <div class="input-group">
 
                             <input type="text" name="username" id="username" value="<?= $inputs['username'] ?? '' ?>" required>
-                            <label for="username">Nom d'utilisateur:</label>
+                            <label for="username">Nom d'utilisateur</label>
                             <small><?= $errors['username'] ?? '' ?></small>
                         </div>
 
                         <div class="input-group">
 
                             <input type="password" name="password" id="password" required>
-                            <label for="password">Mot de passe:</label>
+                            <label for="password">Mot de passe</label>
                             <small><?= $errors['password'] ?? '' ?></small>
+
+                            <?php if (isset($errors['login'])) : ?>
+                                <small>
+                                    <?= $errors['login'] ?>
+                                </small>
+                            <?php endif ?>
+                            <small><?= $errors['approved'] ?? '' ?></small>
                         </div>
 
                         <div style="display: flex;">
@@ -52,7 +54,7 @@ require __DIR__ . '/../src/login.php';
                             <button type="submit" class="submit-btn">Se connecter</button>
                             <footer class="insfooter">Pas un membre! <a href="register.php">Inscription</a></footer>
                         </section>
-                        <small><?= $errors['approved'] ?? '' ?></small>
+
                     </form>
 
 

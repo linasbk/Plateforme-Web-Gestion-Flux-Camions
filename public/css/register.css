@@ -73,7 +73,7 @@ a:active {
 .form-contenue {
     position: relative;
     width: 100%;
-    max-width: 480px;
+    max-width: 540px;
     padding: 60px 40px 40px;
     background: rgba(0, 0, 0, 0.589);
     border-radius: 10px;
@@ -81,6 +81,7 @@ a:active {
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
 }
 
+/*
 .form-contenue::before {
     content: '';
     position: absolute;
@@ -89,10 +90,11 @@ a:active {
     width: 50%;
     height: 100%;
     background: rgba(255, 255, 255, 0.08);
-    transform: skewX(-26deg);
+    transform: skewX(-28deg);
     transform-origin: bottom left;
     border-radius: 10px;
     pointer-events: none;
+
 }
 
 .register::before {
@@ -103,13 +105,13 @@ a:active {
     width: 50%;
     height: 100%;
     background: rgba(255, 255, 255, 0.08);
-    transform: skewX(159deg);
+    transform: skewX(156.5deg);
     transform-origin: bottom left;
     border-radius: 10px;
     pointer-events: none;
 
 }
-
+*/
 .card-header {
     display: flex;
     justify-content: space-evenly;
@@ -143,6 +145,10 @@ a:active {
 
 .form-contenue .input-group {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    margin-top: 13px;
 }
 
 .form-contenue .input-group input {
@@ -150,7 +156,6 @@ a:active {
     padding: 10px 0;
     font-size: 1rem;
     letter-spacing: 1px;
-    margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid #fff;
     outline: none;
@@ -746,4 +751,13 @@ body .main {
 
 .insfooter>a:hover {
     color: #f77d18;
+}
+
+.input-group small {
+    color: #ff1818e8;
+}
+
+.hideformright {
+    height: 100%;
+    z-index: 5;
 }

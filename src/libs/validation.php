@@ -9,7 +9,7 @@ const DEFAULT_VALIDATION_ERRORS = [
     'between' => "Le nom d'utilisateur doit avoir entre %d et %d caractères.",
     'same' => 'Le %s doit correspondre à %s.',
     'alphanumeric' => "Le nom d'utilisateur ne doit contenir que des lettres et des chiffres.",
-    'secure' => 'Le mot de passe doit avoir entre 8 et 64 caractères et contenir au moins un chiffre, une lettre majuscule, une lettre minuscule et un caractère spécial.',
+    'secure' => 'Le mot de passe doit avoir entre 8 et 64 caractères et contenir au moins un chiffre, une lettre majuscule, une lettre minuscule.',
     'unique' => 'existe déjà',
     'approved' => "Le compte n'a pas été aprouvé par l'admin."
 ];
@@ -192,8 +192,8 @@ function is_secure(array $data, string $field): bool
         return false;
     }
 
-    $pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#";
-    #$pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#"; #for special charachters
+    #$pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#";
+    $pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#"; #for special charachters
     return preg_match($pattern, $data[$field]);
 }
 
