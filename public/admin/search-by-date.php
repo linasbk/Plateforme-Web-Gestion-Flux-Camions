@@ -12,7 +12,7 @@ require_admin();
     <div class="background">
         <div class="contenue">
 
-            <titre>
+            <titre style="transform: translateX(43px)">
                 Rechercher véhicule
             </titre>
 

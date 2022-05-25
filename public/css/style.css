@@ -280,8 +280,14 @@ body.dark {
 }
 
 .aside.close .searchcon {
+    border-radius: 6px !important;
     background-color: #2f3437 !important;
-    border-radius: 6px;
+
+}
+
+.aside.close .searchcon:hover {
+    background-color: var(--primary-color) !important;
+    border-radius: 6px !important;
 }
 
 /* ===== Reusable code - Here ===== */
