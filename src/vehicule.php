@@ -40,8 +40,8 @@ function show_image($image)
     $hour = explode("-", $hour);
     $hour =  $hour[0];
 
-    echo "<td class='imagetd'>" . "<img alt='image' class='' onclick='show(this)' src='/auth/files/$hour/$image'
-                            width='120' height='70' style='padding:2px;'> " . "</td>";
+    echo "<td class='imagetd'>" . "<img alt='image' class='imagestyle' onclick='show(this)' src='/auth/files/$hour/$image'
+                            width='120' height='70' > " . "</td>";
 }
 
 function show_html($html)

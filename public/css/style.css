@@ -824,8 +824,13 @@ body .main {
     top: 45%;
     right: 40%;
     margin: 0px;
-    padding: 0px;
 
+}
+
+.imagestyle {
+    border-radius: 8px;
+    border: #2f3437 solid 1px;
+    margin: 2px;
 }
 
 .searchbar {
