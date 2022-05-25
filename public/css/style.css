@@ -269,6 +269,21 @@ body.dark {
     width: 88px;
 }
 
+.aside.close input {
+
+    display: none;
+}
+
+.aside.close select {
+
+    display: none;
+}
+
+.aside.close .searchcon {
+    background-color: #2f3437 !important;
+    border-radius: 6px;
+}
+
 /* ===== Reusable code - Here ===== */
 .aside li {
     height: 50px;
@@ -301,7 +316,7 @@ body.dark {
 }
 
 .aside .text {
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 500;
     white-space: nowrap;
     opacity: 1;
@@ -898,8 +913,6 @@ body .main {
     border-left: 1px solid #5d6268;
     border-radius: 0px 6px 6px 0px !important;
 }
-
-
 
 .searchbutton1 {
 
