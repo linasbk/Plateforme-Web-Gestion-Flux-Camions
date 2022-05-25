@@ -5,7 +5,7 @@ require_admin();
 require __DIR__ . '/../../src/approve.php';
 ?>
 
-<?php view('header', ['title' => 'Gérer les utilisateurs']) ?>
+<?php view('header', ['title' => 'Gérer les utilisateurs', 'js' => 'vehicule']) ?>
 
 
 <div class="main">

@@ -4,7 +4,7 @@ require __DIR__ . '/../../src/bootstrap.php';
 require_admin();
 ?>
 
-<?php view('header', ['title' => 'Admin']) ?>
+<?php view('header', ['title' => 'Admin', 'js' => 'vehicule']) ?>
 
 
 <div class="main">
