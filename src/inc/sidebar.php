@@ -94,3 +94,22 @@ require __DIR__ . '/../../src/vehicule.php';
 
     ;
 </script>
+
+<div class="background">
+    <header id="header">
+        <!-- logo -->
+
+
+
+        <div class="utilisateur">
+
+            <!-- utilisateur icon -->
+
+            <a href="/vpms/admin/admin-profile.php" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="/vpms/images/images.png" alt="User Avatar"></a>
+
+
+        </div>
+
+    </header>
+    <div class="contenue">

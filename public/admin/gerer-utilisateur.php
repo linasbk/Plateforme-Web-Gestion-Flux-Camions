@@ -10,59 +10,57 @@ require __DIR__ . '/../../src/approve.php';
 
 <div class="main">
     <?php view('sidebar') ?>
-    <div class="background">
-        <div class="contenue">
 
-            <titre>
-                <strong>Gérer les utilisateurs</strong>
-            </titre>
+    <titre>
+        <strong>Gérer les utilisateurs</strong>
+    </titre>
 
-            <table>
+    <table>
 
-                <tr>
-                    <th>Id</th>
-                    <th>Nom d'utilisateur</th>
-                    <th>E-mail</th>
-                    <th>Action</th>
+        <tr>
+            <th>Id</th>
+            <th>Nom d'utilisateur</th>
+            <th>E-mail</th>
+            <th>Action</th>
 
-                </tr>
+        </tr>
 
-                <?php
-                $users = find_unnapproved_users();
-                foreach ($users as $user) {
-                ?>
+        <?php
+        $users = find_unnapproved_users();
+        foreach ($users as $user) {
+        ?>
 
-                    <tr>
+            <tr>
 
-                        <td><?php echo $user['id']; ?></td>
-                        <td><?php echo  $user['username']; ?></td>
-                        <td><?php echo  $user['email']; ?></td>
+                <td><?php echo $user['id']; ?></td>
+                <td><?php echo  $user['username']; ?></td>
+                <td><?php echo  $user['email']; ?></td>
 
-                        <td>
+                <td>
 
-                            <form method="post" class="modifier">
-                                <?php $labelname = rand(5, 50000);
-                                if (!check_approval($user['id']))
+                    <form method="post" class="modifier">
+                        <?php $labelname = rand(5, 50000);
+                        if (!check_approval($user['id']))
 
-                                    echo '<label for="' . $labelname . '"><i class="bi bi-lock">';
-                                else echo '<label for="' . $labelname . '"<i class="bi bi-unlock">';
-                                ?>
+                            echo '<label for="' . $labelname . '"><i class="bi bi-lock">';
+                        else echo '<label for="' . $labelname . '"<i class="bi bi-unlock">';
+                        ?>
 
-                                </i><input class="ver" type="submit" id="<?php echo $labelname ?>" name="submit"></label>
-                                <input type="hidden" name="id" value="<?php echo $user["id"]; ?>">
-                            </form>
+                        </i><input class="ver" type="submit" id="<?php echo $labelname ?>" name="submit"></label>
+                        <input type="hidden" name="id" value="<?php echo $user["id"]; ?>">
+                    </form>
 
-                        </td>
+                </td>
 
-                    </tr>
-                <?php } ?>
-            </table>
+            </tr>
+        <?php } ?>
+    </table>
 
 
 
-        </div>
+</div>
 
 
-        <?php view('footer') ?>
-    </div>
+<?php view('footer') ?>
+</div>
 </div>

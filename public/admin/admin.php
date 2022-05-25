@@ -9,14 +9,50 @@ require_admin();
 
 <div class="main">
     <?php view('sidebar') ?>
-    <div class="background">
-        <div class="contenue">
 
-            <titre>
-                <strong>Bonjour administrateur</strong>
-            </titre>
-            <p>hello</p>
+    <titre>
+        <strong>Bonjour administrateur</strong>
+    </titre>
 
-            <?php view('footer') ?>
+    <div class="dashboard">
+
+        <div>
+            <img class="truck " src="../images/truck3.png" alt="truck">
+            <div>
+                <span>2</span>
+                <p>Véhicules entrés aujourd'hui</p>
+            </div>
+
         </div>
+
+
+        <div>
+            <img class="truck " src="../images/truck.png" alt="truck">
+            <div><span>2</span>
+                <p>Véhicules entrés hier</p>
+            </div>
+        </div>
+
+        <div>
+            <img class="truck " src="../images/truck1.png" alt="truck">
+            <div>
+                <span>4</span>
+                <p>Véhicules entrés cette semaine</p>
+            </div>
+
+        </div>
+
+
+        <div>
+            <img class="truck" src="../images/truck2.png" alt="truck">
+            <div>
+                <span>5</span>
+                <p>Totale de véhicules entrés</p>
+            </div>
+        </div>
+
     </div>
+</div>
+</div>
+<?php view('footer') ?>
+</div>

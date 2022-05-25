@@ -9,17 +9,15 @@ require_admin();
 <body>
     <div class="main">
         <?php view('sidebar') ?>
-        <div class="background">
-            <div class="contenue">
 
 
-                <titre>
-                    <strong>Gérer les véhicules</strong>
-                </titre>
-                <?php
-                #$date = "20" . date('y-n-d');
-                csv_table("2022-5-23", '0', 'IN');
-                ?>
+        <titre>
+            <strong>Gérer les véhicules</strong>
+        </titre>
+        <?php
+        #$date = "20" . date('y-n-d');
+        csv_table("2022-5-23", '0', 'IN');
+        ?>
 </body>
 
 
