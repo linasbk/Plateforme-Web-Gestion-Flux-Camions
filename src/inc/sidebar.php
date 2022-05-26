@@ -5,7 +5,7 @@ require __DIR__ . '/../../src/vehicule.php';
 
 
 <nav class="aside ">
-    <header class="header">
+    <div class="header">
         <div class="image-text">
             <span class="image">
                 <img src="../images/logo.png" alt="">
@@ -14,13 +14,13 @@ require __DIR__ . '/../../src/vehicule.php';
             <div class="text logo-text">
                 <span class="name">Système de </span>
                 <span class="profession">gestion des véhicules</span>
-                Bonjour <?= current_user() ?>
+
             </div>
         </div>
 
         <i class='bx bx-chevron-right toggle'></i>
 
-    </header>
+    </div>
 
 
     <div class="menu-bar">
@@ -89,14 +89,21 @@ require __DIR__ . '/../../src/vehicule.php';
 
     toggle.addEventListener("click", () => {
         aside.classList.toggle("close");
-    })
-
-
-    ;
+    });
 </script>
 
+
+<script>
+    window.addEventListener('scroll', function() {
+        let header = document.querySelector('.navheader');
+        let windowPosition = window.scrollY > 0;
+        header.classList.toggle('scrolling-active', windowPosition);
+    })
+</script>
+
+
 <div class="background">
-    <header id="header">
+    <header id="navheader" class="navheader ">
         <!-- logo -->
 
         <div class="utilisateur">

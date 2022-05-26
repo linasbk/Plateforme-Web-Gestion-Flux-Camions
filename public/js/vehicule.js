@@ -37,6 +37,8 @@ function hidetab() {
 }
 
 
+  
+
 function impri() {
     var divToPrint = document.getElementById("searchtable");
     divToPrint.style.border = "1px solid black";
