@@ -930,3 +930,18 @@ body .main {
     margin-bottom: 9px;
     font-size: 15px;
 }
+
+.info {
+
+    text-align: center;
+    font-size: 14px;
+    color: green;
+}
+
+.info-red {
+
+    text-align: center;
+    font-size: 14px;
+    color: red;
+
+}

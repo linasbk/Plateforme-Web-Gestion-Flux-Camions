@@ -10,7 +10,7 @@ require_admin();
 <script type="text/javascript">
     function checkpass() {
         if (document.changepassword.newpassword.value != document.changepassword.confirmpassword.value) {
-            alert('Les deux mot de passe ne correspond pas');
+            document.getElementById("info-error").innerHTML = 'Les deux mot de passe ne correspond pas';
             document.changepassword.confirmpassword.focus();
             return false;
         }
@@ -19,15 +19,7 @@ require_admin();
 </script>
 
 
-<?php if (isset($_POST['submit'])) {
 
-    $username = 'admin';
-    $password = $_POST['confirmpassword'];
-    $currentpassword = $_POST['currentpassword'];
-
-    if (check_password($username, $currentpassword)) change_password($username, $password);
-}
-?>
 
 <div class="main">
     <?php view('sidebar') ?>
@@ -60,7 +52,19 @@ require_admin();
 
         <p class="centerbutton"><button type="submit" name="submit">Changer</button></p>
 
+        <?php if (isset($_POST['submit'])) {
 
+            $username = 'admin';
+            $password = $_POST['confirmpassword'];
+            $currentpassword = $_POST['currentpassword'];
+
+            if (check_password($username, $currentpassword)) {
+                change_password($username, $password);
+                echo '<small class="info">Mot de passe changé avec succès.<small>';
+            } else echo '<small class="info-red">Mot de passe actuel incorrect .<small>';
+        }
+        ?>
+        <small class="info-red" id='info-error'></small>
     </form>
 
 
