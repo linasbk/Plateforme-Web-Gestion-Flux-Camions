@@ -41,7 +41,7 @@ function show_image($image)
     $hour =  $hour[0];
 
     echo "<td class='imagetd'>" . "<img alt='image' class='imagestyle' onclick='show(this)' src='/auth/files/$hour/$image'
-                            width='120' height='70' > " . "</td>";
+                            width='120' height='75' > " . "</td>";
 }
 
 
