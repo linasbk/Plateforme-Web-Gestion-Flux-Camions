@@ -10,7 +10,7 @@ require_admin();
 <script type="text/javascript">
     function checkpass() {
         if (document.changepassword.newpassword.value != document.changepassword.confirmpassword.value) {
-            alert('New Password and Confirm Password field does not match');
+            alert('Les deux mot de passe ne correspond pas');
             document.changepassword.confirmpassword.focus();
             return false;
         }
@@ -18,6 +18,16 @@ require_admin();
     }
 </script>
 
+
+<?php if (isset($_POST['submit'])) {
+
+    $username = 'admin';
+    $password = $_POST['confirmpassword'];
+    $currentpassword = $_POST['currentpassword'];
+
+    if (check_password($username, $currentpassword)) change_password($username, $password);
+}
+?>
 
 <div class="main">
     <?php view('sidebar') ?>
@@ -52,7 +62,8 @@ require_admin();
 
 
     </form>
-    <a href="admin-profile.php"><button><i></i>Modifier donnée</button></a>
+
+
 
 
 </div>

@@ -103,7 +103,7 @@ require __DIR__ . '/../../src/vehicule.php';
 
             <!-- utilisateur icon -->
 
-            <a href="admin-profile.php" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="change-password.php" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src="/auth/public/images/images.png" alt="User Avatar"></a>
 
 

@@ -47,6 +47,40 @@ function register_user(string $email, string $username, string $password, string
     return $statement->execute();
 }
 
+function check_password(string $username, string $password): bool
+{
+    $sql = 'select password FROM users WHERE username = :username';
+    $statement = db()->prepare($sql);
+    $statement->bindValue(':username', $username);
+    $statement->execute();
+    $results = $statement->fetch();
+
+    $sqlpassword = $results['password'];
+
+    $same_password = password_verify($password, $sqlpassword);
+
+    if ($same_password) return true;
+    return false;
+}
+
+
+function change_password(string $username, string $password): bool
+{
+    $sql = 'UPDATE users SET password = :password WHERE username = :username';
+
+    $statement = db()->prepare($sql);
+
+    $statement->bindValue(':username', $username);
+
+    $statement->bindValue(':password', password_hash($password, PASSWORD_BCRYPT));
+
+    return $statement->execute();
+}
+
+
+
+
+
 function find_user_by_username(string $username)
 {
     $sql = 'SELECT username, password, active, email, id , is_admin , approved
@@ -329,19 +363,6 @@ function activate_user(int $user_id): bool
 
     return $statement->execute();
 }
-
-// function approve_user(int $user_id): bool
-// {
-//     $sql = 'UPDATE users
-//             SET approved = 1,
-//                 approved_at = CURRENT_TIMESTAMP
-//             WHERE id=:id';
-
-//     $statement = db()->prepare($sql);
-//     $statement->bindValue(':id', $user_id, PDO::PARAM_INT);
-
-//     return $statement->execute();
-// }
 
 
 

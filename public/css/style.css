@@ -804,8 +804,6 @@ body .main {
 
 }
 
-
-
 .switchbuttons .inactive {
     background-color: #2f3437;
 }
@@ -907,11 +905,12 @@ body .main {
 /*for the select*/
 
 .searchselect1 {
+
     text-align: center;
     width: 85px;
     font-size: 17px;
     margin-top: 8px;
-    padding: 14px 2px;
+    padding: 14.2px 2px;
     align-self: center;
     color: white;
     background-color: #515558;
