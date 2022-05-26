@@ -945,3 +945,21 @@ body .main {
     color: red;
 
 }
+
+.trashcan {
+    display: none;
+}
+
+.bxs-edit-alt,
+.bxs-trash {
+    color: #5d6268;
+    padding: 10px 0;
+    scale: 1.5;
+
+}
+
+.bxs-edit-alt:hover,
+.bxs-trash:hover {
+    color: #fa7933;
+    cursor: pointer;
+}

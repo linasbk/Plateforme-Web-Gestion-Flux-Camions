@@ -26,7 +26,7 @@ require __DIR__ . '/../../src/approve.php';
         </tr>
 
         <?php
-        $users = find_unnapproved_users();
+        $users = find_users();
         foreach ($users as $user) {
         ?>
 
@@ -48,7 +48,14 @@ require __DIR__ . '/../../src/approve.php';
 
                         </i><input class="ver" type="submit" id="<?php echo $labelname ?>" name="submit"></label>
                         <input type="hidden" name="id" value="<?php echo $user["id"]; ?>">
+
+
+                        <label for="delete"><i class="bx bxs-trash"></i></label>
+                        <input class="trashcan" type="submit" id="delete" name="delete">
+
                     </form>
+
+
 
                 </td>
 

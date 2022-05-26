@@ -11,4 +11,9 @@ if (is_post_request()) {
         $id = $_POST['id'];
         toggle_approval($id);
     }
+
+    if (isset($_POST['delete'])) {
+        $id = $_POST['id'];
+        delete_user($id);
+    }
 }

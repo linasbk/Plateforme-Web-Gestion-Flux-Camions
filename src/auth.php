@@ -94,7 +94,7 @@ function find_user_by_username(string $username)
     return $statement->fetch(PDO::FETCH_ASSOC);
 }
 
-function find_unnapproved_users()
+function find_users()
 {
     $sql = 'SELECT username, email, id , approved
             FROM users where is_admin = 0 ';
@@ -103,6 +103,15 @@ function find_unnapproved_users()
     $statement->execute();
 
     return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function delete_user($id)
+{
+    $sql = 'DELETE FROM users WHERE id =:id';
+
+    $statement = db()->prepare($sql);
+    $statement->bindValue(':id', $id);
+    $statement->execute();
 }
 
 function log_user_in($user)
