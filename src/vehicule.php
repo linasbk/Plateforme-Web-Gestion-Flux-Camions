@@ -44,11 +44,22 @@ function show_image($image)
                             width='120' height='70' > " . "</td>";
 }
 
-function show_html($html)
+
+function show_html($html, $color)
 {
-    echo "<td>" . htmlspecialchars($html) . "</td>";
+    echo "<td style='color:$color'>" . htmlspecialchars($html) . "</td>";
 }
 
+
+function color_html($word)
+{
+    if (strpos($word, '%') !== false || strpos($word, 'IN') !== false) {
+        if (trim($word, '%') >= 80)
+            show_html($word, 'green');
+        else
+            show_html($word, 'red');
+    } else show_html($word, 'black');
+}
 function search_csv($date, $searchcolumn, $searchvalue)
 {
 
@@ -72,7 +83,8 @@ function search_csv($date, $searchcolumn, $searchvalue)
                 foreach ($value as $word) {
 
                     if (is_image($word)) show_image($word);
-                    else show_html($word);
+                    else
+                        color_html($word);
                 }
             }
         }
