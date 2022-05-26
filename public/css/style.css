@@ -963,3 +963,17 @@ body .main {
     color: #fa7933;
     cursor: pointer;
 }
+
+#alert {
+    position: absolute;
+    color: white;
+    text-align: center;
+    align-self: center;
+    top: 8%;
+    right: 29%;
+    background: #151b20;
+    border-radius: 8em;
+    padding: 1em;
+    margin-bottom: 23px;
+    z-index: 9;
+}
