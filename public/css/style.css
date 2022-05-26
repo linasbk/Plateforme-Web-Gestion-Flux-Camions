@@ -817,7 +817,7 @@ body .main {
 .bi,
 .bi-unlock,
 .bi-lock {
-    color: #5d6268 !important;
+
     margin: 10px 0 !important;
     font-size: 2em !important;
 }
@@ -825,7 +825,7 @@ body .main {
 .bi:hover,
 .bi-unlock:hover,
 .bi-lock:hover {
-    color: #fa7933 !important;
+
     cursor: pointer !important;
 }
 

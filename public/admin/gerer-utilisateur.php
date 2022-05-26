@@ -42,8 +42,8 @@ require __DIR__ . '/../../src/approve.php';
                         <?php $labelname = rand(5, 50000);
                         if (!check_approval($user['id']))
 
-                            echo '<label for="' . $labelname . '"><i class="bi bi-lock">';
-                        else echo '<label for="' . $labelname . '"<i class="bi bi-unlock">';
+                            echo '<label style="color:red !important" for="' . $labelname . '"><i  class="bi bi-lock">';
+                        else echo '<label  style="color:green !important"  for="' . $labelname . '"<i class="bi bi-unlock">';
                         ?>
 
                         </i><input class="ver" type="submit" id="<?php echo $labelname ?>" name="submit"></label>
