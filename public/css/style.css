@@ -815,9 +815,10 @@ body .main {
 .bi,
 .bi-unlock,
 .bi-lock {
-
-    margin: 10px 0 !important;
-    font-size: 2em !important;
+    top: -5px;
+    position: relative;
+    margin: 0px 0 !important;
+    font-size: 1.7em !important;
 }
 
 .bi:hover,
@@ -907,10 +908,10 @@ body .main {
 .searchselect1 {
 
     text-align: center;
-    width: 85px;
-    font-size: 17px;
+    width: 81px;
+    font-size: 14px;
     margin-top: 8px;
-    padding: 14.2px 2px;
+    padding: 16px 0px;
     align-self: center;
     color: white;
     background-color: #515558;
@@ -953,9 +954,8 @@ body .main {
 .bxs-edit-alt,
 .bxs-trash {
     color: #5d6268;
-    padding: 10px 0;
-    scale: 1.5;
-
+    margin: 10px 0 !important;
+    font-size: 2em !important;
 }
 
 .bxs-edit-alt:hover,
