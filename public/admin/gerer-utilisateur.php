@@ -56,11 +56,6 @@ require __DIR__ . '/../../src/approve.php';
         <?php } ?>
     </table>
 
-
-
 </div>
-
 
 <?php view('footer') ?>
-</div>
-</div>

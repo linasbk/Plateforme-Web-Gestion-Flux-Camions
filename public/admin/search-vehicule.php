@@ -20,6 +20,5 @@ $searchdata = $_SESSION['searchdata']
     csv_table("2022-5-23", $searchtype, $searchdata);
     ?>
 
-    <?php view('footer') ?>
 </div>
-</div>
+<?php view('footer') ?>

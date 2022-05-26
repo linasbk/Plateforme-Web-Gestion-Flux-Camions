@@ -8,8 +8,6 @@ redirect_admin();
 <?php view('header', ['title' => 'Dashboard']) ?>
 
 
-
-
 <div class="main">
     <div class="background">
         <div class="contenue">
@@ -23,4 +21,7 @@ redirect_admin();
                     <p>Déconnexion</p>
                 </span>
             </a>
-            <?php view('footer') ?>
+        </div>
+    </div>
+</div>
+<?php view('footer') ?>

@@ -99,14 +99,12 @@ require __DIR__ . '/../../src/vehicule.php';
     <header id="header">
         <!-- logo -->
 
-
-
         <div class="utilisateur">
 
             <!-- utilisateur icon -->
 
-            <a href="/vpms/admin/admin-profile.php" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="/vpms/images/images.png" alt="User Avatar"></a>
+            <a href="admin-profile.php" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="/auth/public/images/images.png" alt="User Avatar"></a>
 
 
         </div>

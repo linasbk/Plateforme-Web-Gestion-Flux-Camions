@@ -52,7 +52,5 @@ require_admin();
         </div>
 
     </div>
-</div>
-</div>
-<?php view('footer') ?>
-</div>
+
+    <?php view('footer') ?>

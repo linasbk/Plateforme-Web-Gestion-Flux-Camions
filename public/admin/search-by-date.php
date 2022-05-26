@@ -6,8 +6,8 @@ require_admin();
 
 <?php view('header', ['title' => 'rechercher véhicule', 'js' => 'vehicule']) ?>
 
-
 <div class="main">
+
     <?php view('sidebar') ?>
 
     <titre style="transform: translateX(43px)">
@@ -32,12 +32,10 @@ require_admin();
 
     <?php if (isset($_POST['search'])) {
 
-        $fromdate =  formatdate($_POST['fromdate']);
-        $todate = formatdate($_POST['todate']);
+        $fromdate = formatdate($_POST['fromdate']);
+        $todate   = formatdate($_POST['todate']);
 
         csv_table($todate, 0, 'IN');
     } ?>
-
-    <?php view('footer') ?>
 </div>
-</div>
+<?php view('footer') ?>

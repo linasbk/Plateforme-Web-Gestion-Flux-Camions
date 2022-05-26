@@ -6,7 +6,7 @@ require __DIR__ . '/../src/register.php';
 <?php view('header', ['title' => 'Inscription', 'css' => 'register']) ?>
 
 
-<body class="indexbody">
+<div class="indexbody">
 
     <div class="login-wrapper">
         <div action="" class="form-contenue register">
@@ -53,5 +53,6 @@ require __DIR__ . '/../src/register.php';
             </div>
 
         </div>
-
-        <?php view('footer') ?>
+    </div>
+</div>
+<?php view('footer') ?>
