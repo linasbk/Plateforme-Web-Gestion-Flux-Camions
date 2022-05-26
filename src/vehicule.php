@@ -9,7 +9,7 @@ function formatdate($date)
 
 function csv_table($date, $searchcolumn, $searchvalue)
 {
-    echo "<table id='searchtable' class=''>
+    echo "<table  border='1' cellpadding='15' id='searchtable' class=''>
             <tr>
                 <th>Accès</th>
                 <th>Matricule</th>
