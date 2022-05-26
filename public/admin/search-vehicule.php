@@ -19,19 +19,16 @@ $searchdata = $_SESSION['searchdata']
     <?php
     csv_table("2022-5-23", $searchtype, $searchdata);
     ?>
-    <input type="button" onclick="imprimir()" value="Print Table" />
+    <input class="imprimer" type="button" onclick="imprimir()" value="Imprimé" />
 
     <script type="text/javascript">
         function imprimir() {
             var divToPrint = document.getElementById("searchtable");
             divToPrint.style.border = "1px solid black";
             divToPrint.style.borderCollapse = "collapse";
-
-
             newWin = window.open("");
             newWin.document.write("<br><br>");
             newWin.document.write(divToPrint.outerHTML);
-
             newWin.print();
             newWin.close();
         }

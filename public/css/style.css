@@ -292,7 +292,8 @@ body.dark {
 
 /* ===== Reusable code - Here ===== */
 .aside li {
-    height: 50px;
+
+    height: 51px;
     list-style: none;
     display: flex;
     align-items: center;
@@ -853,6 +854,10 @@ body .main {
     margin: 2px;
 }
 
+.searchli {
+    margin-top: 0px !important;
+}
+
 .searchbar {
     display: flex;
     height: 55px;
@@ -870,9 +875,8 @@ body .main {
 
 
 .searchinput {
-    margin-top: 11px;
-    margin-bottom: 1px;
-
+    margin-top: 1px;
+    margin-bottom: 10px;
     border-radius: 6px;
     font-size: 16px;
     color: white;
@@ -899,17 +903,15 @@ body .main {
     border-radius: 6px 0px 0px 6px !important;
 }
 
-.aside li {
-    height: 51px !important;
-}
 
 /*for the select*/
 
 .searchselect1 {
-
+    position: relative;
+    top: -10px;
     text-align: center;
     width: 81px;
-    font-size: 14px;
+    font-size: 13px;
     margin-top: 8px;
     padding: 16px 0px;
     align-self: center;
@@ -976,4 +978,9 @@ body .main {
     padding: 1em;
     margin-bottom: 23px;
     z-index: 9;
+}
+
+.imprimer:hover {
+    color: white;
+    background-color: #fa7933;
 }
