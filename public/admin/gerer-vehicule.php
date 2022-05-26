@@ -16,7 +16,7 @@ require_admin();
     </titre>
     <?php
     #$date = "20" . date('y-n-d');
-    csv_table("2022-5-23", '0', 'IN');
+    csv_table("2022-5-23", '0', '');
     ?>
 </div>
 <?php view('footer') ?>

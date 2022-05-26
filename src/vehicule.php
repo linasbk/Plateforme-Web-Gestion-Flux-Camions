@@ -53,13 +53,17 @@ function show_html($html, $color)
 
 function color_html($word)
 {
+
     if (strpos($word, '%') !== false || strpos($word, 'IN') !== false) {
         if (trim($word, '%') >= 80)
             show_html($word, 'green');
         else
             show_html($word, 'red');
-    } else show_html($word, 'black');
+    } elseif (strpos($word, 'OUT') !== false) show_html($word, 'red');
+
+    else show_html($word, 'black');
 }
+
 function search_csv($date, $searchcolumn, $searchvalue)
 {
 
