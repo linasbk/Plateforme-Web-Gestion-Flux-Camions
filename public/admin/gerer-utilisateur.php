@@ -9,11 +9,9 @@ require __DIR__ . '/../../src/approve.php';
 
 
 <div class="main">
-    <?php view('sidebar') ?>
+    <?php view('sidebar', ['titre' => 'Gérer les utilisateurs']) ?>
 
-    <titre>
-        <strong>Gérer les utilisateurs</strong>
-    </titre>
+
 
     <table>
 

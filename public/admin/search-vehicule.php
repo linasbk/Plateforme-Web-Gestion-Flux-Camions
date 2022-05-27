@@ -11,11 +11,9 @@ $searchdata = $_SESSION['searchdata']
 
 
 <div class="main">
-    <?php view('sidebar') ?>
 
-    <titre>
-        Rechercher véhicule
-    </titre>
+    <?php view('sidebar', ['titre' => 'Rechercher véhicule']) ?>
+
     <?php
     csv_table("2022-5-23", $searchtype, $searchdata);
     ?>

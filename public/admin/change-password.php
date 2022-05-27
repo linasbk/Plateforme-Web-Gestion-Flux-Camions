@@ -22,12 +22,8 @@ require_admin();
 
 
 <div class="main">
-    <?php view('sidebar') ?>
 
-
-    <titre>
-        <strong>Changer </strong> mot de passe
-    </titre>
+    <?php view('sidebar', ['titre' => 'Changer mot de passe']) ?>
 
 
     <form action="" method="post" enctype="multipart/form-data" name="changepassword" onsubmit="return checkpass();">

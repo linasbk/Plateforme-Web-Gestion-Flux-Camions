@@ -106,12 +106,16 @@ require __DIR__ . '/../../src/vehicule.php';
     <header id="navheader" class="navheader ">
         <!-- logo -->
 
+        <titre>
+            <strong><?= $titre ?? 'Dashboard' ?></strong>
+        </titre>
+
         <div class="utilisateur">
 
             <!-- utilisateur icon -->
 
             <a href="change-password.php" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="/auth/public/images/images.png" alt="User Avatar"></a>
+                <object data="/auth/public/images/images.png" width="60" height="65"> </object></a>
 
 
         </div>

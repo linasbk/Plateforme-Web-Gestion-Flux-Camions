@@ -8,17 +8,15 @@ require_admin();
 
 
 <div class="main">
-    <?php view('sidebar') ?>
+    <?php view('sidebar', ['titre' => 'Gérer les véhicules']) ?>
 
 
-    <titre>
-        <strong>Gérer les véhicules</strong>
-    </titre>
+
     <?php
     #$date = "20" . date('y-n-d');
     csv_table("2022-5-23", '2', '2019');
     ?>
 
-    <input class="imprimer" type="button" onclick="impri()" value="Imprimé" />
+    <input class="imprimer" type="button" onclick="impri()" value="Imprimer" />
 </div>
 <?php view('footer') ?>

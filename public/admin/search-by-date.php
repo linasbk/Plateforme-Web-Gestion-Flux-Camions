@@ -8,11 +8,7 @@ require_admin();
 
 <div class="main">
 
-    <?php view('sidebar') ?>
-
-    <titre style="transform: translateX(43px)">
-        Rechercher véhicule
-    </titre>
+    <?php view('sidebar', ['titre' => 'Rechercher véhicule']) ?>
 
 
     <form class="form2" action="" method="post" enctype="multipart/form-data" name="bwdatesreport">

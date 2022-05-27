@@ -8,11 +8,7 @@ require_admin();
 
 
 <div class="main">
-    <?php view('sidebar') ?>
-
-    <titre>
-        <strong>Bonjour administrateur</strong>
-    </titre>
+    <?php view('sidebar', ['titre' => 'Dashboard']) ?>
 
     <div class="dashboard">
 
