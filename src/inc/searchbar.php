@@ -1,8 +1,8 @@
 <div class="searchbar">
     <form class="search" action="" method="post" enctype="multipart/form-data" name="search" id="formsearch">
 
-        <li class="searchli"><a class="searchcon" onclick="submitform();" href=""><i class='bx bx-search icon '></i>
-            </a>
+        <li class="searchli"><button type="submit" class="searchbutton1 searchcon" onclick="hidetab()" name="search"><i class='bx bx-search icon searchicon'> </i></button>
+
         </li>
         <input placeholder="Recherche" class="searchinput" type="text" id="searchdata" name="searchdata" required="required" autofocus="autofocus">
         <div>
@@ -17,7 +17,7 @@
             </select>
         </div>
 
-        <button hidden type="submit" class="searchbutton1" onclick="hidetab()" name="search"></button>
+
     </form>
 </div>
 

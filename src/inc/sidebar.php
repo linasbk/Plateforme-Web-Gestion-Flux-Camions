@@ -85,10 +85,15 @@ require __DIR__ . '/../../src/vehicule.php';
     const body = document.querySelector('body'),
         aside = body.querySelector('nav'),
         toggle = body.querySelector(".toggle"),
+        searchicon = body.querySelector(".searchicon"),
         modeText = body.querySelector(".mode-text");
 
     toggle.addEventListener("click", () => {
         aside.classList.toggle("close");
+
+    });
+    searchicon.addEventListener("click", () => {
+        aside.classList.remove("close");
     });
 </script>
 
@@ -115,7 +120,7 @@ require __DIR__ . '/../../src/vehicule.php';
             <!-- utilisateur icon -->
 
             <a href="change-password.php" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <object data="/auth/public/images/images.png" width="60" height="65"> </object></a>
+                <object data="/auth/public/images/images1.png" width="60" height="65"> </object></a>
 
 
         </div>

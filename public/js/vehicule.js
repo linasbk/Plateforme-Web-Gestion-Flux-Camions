@@ -1,8 +1,6 @@
 flag = 0;
 
-function submitform(){
-    document.getElementById("formsearch").submit();
-}
+
 
 function show(el) {
 

@@ -926,15 +926,19 @@ titre {
 
 .searchbutton1 {
 
-    width: 30px;
+
     border-radius: 0;
     background-color: white;
-
-    padding: 0px 13px;
+    padding: 0;
     margin-top: 7px;
     margin-bottom: 9px;
     font-size: 15px;
 }
+
+.searchbutton1:hover {
+    cursor: pointer;
+}
+
 
 .info {
 
