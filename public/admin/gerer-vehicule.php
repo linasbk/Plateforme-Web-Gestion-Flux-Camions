@@ -14,9 +14,9 @@ require_admin();
 
     <?php
     #$date = "20" . date('y-n-d');
-    csv_table("2022-5-23", '2', '2019');
+    csv_table("2022-5-23", '0', '');
     ?>
 
-    <input class="imprimer" type="button" onclick="impri()" value="Imprimer" />
+
 </div>
 <?php view('footer') ?>

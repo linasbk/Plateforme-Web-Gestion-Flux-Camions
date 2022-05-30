@@ -14,7 +14,7 @@ $searchdata = $_SESSION['searchdata']
 
     <?php view('sidebar', ['titre' => 'Rechercher véhicule']) ?>
     <?php
-    csv_table("2022-5-23", $searchtype, $searchdata);
+    if (csv_table("2022-5-23", $searchtype, $searchdata)) echo "<titre style='margin-top: 8em;;color:#f77d18;'>Aucun résultat trouvée<titre>";
     ?>
 
 

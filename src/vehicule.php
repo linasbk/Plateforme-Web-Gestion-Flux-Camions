@@ -50,10 +50,10 @@ function color_html($word)
     else show_html($word, 'black');
 }
 
-function  csv_table($date, $searchcolumn, $searchvalue)
+function  csv_table($date, $searchcolumn, $searchvalue): bool
 {
 
-    $check = false;
+    $check = true;
     $tabheader = "<table  border='1' cellpadding='15' id='searchtable' class=''>
 <tr>
     <th>Accès</th>
@@ -81,9 +81,9 @@ function  csv_table($date, $searchcolumn, $searchvalue)
 
             if (isset($value[$searchcolumn]) && stripos($value[$searchcolumn], trim($searchvalue)) !== false) {
 
-                if (!$check) {
+                if ($check) {
                     echo $tabheader;
-                    $check = true;
+                    $check = false;
                 }
 
                 foreach ($value as $word) {
@@ -98,6 +98,8 @@ function  csv_table($date, $searchcolumn, $searchvalue)
         }
     }
     fclose($f);
-    echo   "</tr>
-    </table>";
+    if (!$check) echo "</tr>
+    </table> <input class='imprimer' type='button' onclick='impri()' value='Imprimé'/>
+    ";
+    return $check;
 }
