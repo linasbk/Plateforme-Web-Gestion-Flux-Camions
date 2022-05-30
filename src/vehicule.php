@@ -7,23 +7,7 @@ function formatdate($date)
     return $date;
 }
 
-function csv_table($date, $searchcolumn, $searchvalue)
-{
-    echo "<table  border='1' cellpadding='15' id='searchtable' class=''>
-            <tr>
-                <th>Accès</th>
-                <th>Matricule</th>
-                <th>Date</th>
-                <th>Heure</th>
-                <th>image</th>
-                <th>Sûreté</th>
-            </tr>
-            <tr>
-      ";
-    search_csv($date, $searchcolumn, $searchvalue);
-    echo   "</tr>
-            </table>";
-}
+
 
 function is_image($image): bool
 {
@@ -66,9 +50,21 @@ function color_html($word)
     else show_html($word, 'black');
 }
 
-function search_csv($date, $searchcolumn, $searchvalue)
+function  csv_table($date, $searchcolumn, $searchvalue)
 {
 
+    $check = false;
+    $tabheader = "<table  border='1' cellpadding='15' id='searchtable' class=''>
+<tr>
+    <th>Accès</th>
+    <th>Matricule</th>
+    <th>Date</th>
+    <th>Heure</th>
+    <th>image</th>
+    <th>Sûreté</th>
+</tr>
+<tr>
+";
 
     # $f = fopen("../files/-$date-.csv", "r");
     $f = fopen("../files/-$date-.csv", "r");
@@ -78,7 +74,6 @@ function search_csv($date, $searchcolumn, $searchvalue)
 
     while (($line = fgetcsv($f)) !== false) {
 
-        echo "<tr>";
 
         foreach ($line as $cell) {
 
@@ -86,15 +81,23 @@ function search_csv($date, $searchcolumn, $searchvalue)
 
             if (isset($value[$searchcolumn]) && stripos($value[$searchcolumn], trim($searchvalue)) !== false) {
 
+                if (!$check) {
+                    echo $tabheader;
+                    $check = true;
+                }
+
                 foreach ($value as $word) {
 
                     if (is_image($word)) show_image($word);
                     else
                         color_html($word);
                 }
+
+                echo "</tr>\n";
             }
         }
-        echo "</tr>\n";
     }
     fclose($f);
+    echo   "</tr>
+    </table>";
 }

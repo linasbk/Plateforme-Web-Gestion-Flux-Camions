@@ -13,11 +13,10 @@ $searchdata = $_SESSION['searchdata']
 <div class="main">
 
     <?php view('sidebar', ['titre' => 'Rechercher véhicule']) ?>
-
     <?php
     csv_table("2022-5-23", $searchtype, $searchdata);
     ?>
-    <input class="imprimer" type="button" onclick="impri()" value="Imprimé" />
+
 
 
 </div>
