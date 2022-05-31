@@ -4,4 +4,6 @@
     RewriteBase /auth/public
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
+
 </IfModule>
+ErrorDocument 404 /auth/public/error/error.html
