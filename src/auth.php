@@ -102,7 +102,22 @@ function find_users()
     $statement = db()->prepare($sql);
     $statement->execute();
 
+
     return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function users_exist(): bool
+{
+
+    $sql = 'SELECT username, email, id , approved
+    FROM users where is_admin = 0 ';
+
+    $statement = db()->prepare($sql);
+    $statement->execute();
+
+    $rows =  $statement->rowCount();
+    if ($rows > 0)  return true;
+    return false;
 }
 
 function delete_user($id)
