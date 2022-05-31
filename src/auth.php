@@ -106,7 +106,7 @@ function find_users()
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function users_exist(): bool
+function users_exist()
 {
 
     $sql = 'SELECT username, email, id , approved
@@ -116,9 +116,22 @@ function users_exist(): bool
     $statement->execute();
 
     $rows =  $statement->rowCount();
-    if ($rows > 0)  return true;
-    return false;
+    return  $rows;
 }
+function users_exist_innaproved()
+{
+
+    $sql = 'SELECT username, email, id , approved
+    FROM users where is_admin = 0 and approved = 0 ';
+
+    $statement = db()->prepare($sql);
+    $statement->execute();
+
+    $rows =  $statement->rowCount();
+
+    return  $rows;
+}
+
 
 function delete_user($id)
 {

@@ -17,19 +17,20 @@ require __DIR__ . '/../../src/approve.php';
 
     <?php
     $users = find_users();
-    if (!users_exist()) echo "<titre style='margin-top: 8em;;color:#f77d18;'>Aucun résultat trouvée<titre>";
+    if (users_exist() <= 0) echo "<titre style='margin-top: 8em;;color:#f77d18;'>Aucun résultat trouvée<titre>";
     else {
+        echo '
+        <table>
+        <tr>
+            <th>Id</th>
+            <th>Nom d\'utilisateur</th>
+            <th>E-mail</th>
+            <th>Action</th>
+        </tr>';
         foreach ($users as $user) {
             $labelname = rand(5, 50000);
-            echo '
-                <table>
-                <tr>
-                    <th>Id</th>
-                    <th>Nom d\'utilisateur</th>
-                    <th>E-mail</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
+
+            echo '<tr>
                     <td>' . $user["id"] . '</td>
                     <td>' . $user["username"] . '</td>
                     <td>' . $user["email"] . '</td>
@@ -53,12 +54,11 @@ require __DIR__ . '/../../src/approve.php';
 
                         </form>          
 
-                        </td>
-    
-                    </tr>
+                        </td>';
+        }
+        echo '</tr>
     
         </table>';
-        }
     } ?>
 
 </div>
