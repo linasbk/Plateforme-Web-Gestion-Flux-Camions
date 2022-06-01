@@ -2,6 +2,7 @@
 
 require __DIR__ . '/../src/bootstrap.php';
 require __DIR__ . '/../src/login.php';
+
 ?>
 
 <?php view('header', ['title' => "Se connecter", 'css' => 'register']) ?>
@@ -30,10 +31,12 @@ require __DIR__ . '/../src/login.php';
                             <?php if (isset($errors['login'])) : ?>
                                 <small>
                                     <?= $errors['login'] ?>
+                                    <a class="forgot-password" href="forgot-password.php"> Mot de passe oublié?</a>
                                 </small>
                             <?php endif ?>
 
                             <small><?= $errors['approved'] ?? '' ?></small>
+
                         </div>
 
                         <div style="display: flex;">
@@ -43,6 +46,7 @@ require __DIR__ . '/../src/login.php';
                             </label>
                             <small><?= $errors['agree'] ?? '' ?></small>
                         </div>
+
                         <section>
                             <button type="submit" class="submit-btn">Se connecter</button>
                             <footer class="insfooter">Pas un membre! <a href="register.php">Inscription</a></footer>

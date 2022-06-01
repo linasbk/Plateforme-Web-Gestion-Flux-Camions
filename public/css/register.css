@@ -761,3 +761,13 @@ body .main {
     height: 100%;
     z-index: 5;
 }
+
+.forgot-password {
+
+    font-weight: bold;
+}
+
+.forgot-password:hover {
+
+    text-decoration: underline;
+}

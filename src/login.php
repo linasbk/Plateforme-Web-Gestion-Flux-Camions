@@ -25,7 +25,14 @@ if (is_post_request()) {
     // if login fails
     if (!login($inputs['username'], $inputs['password'], isset($inputs['remember_me']))) {
 
-        $errors['login'] = "Nom d'utilisateur ou mot de passe invalide.";
+
+        $email = get_email($inputs['username']);
+        $_SESSION['email'] = $email;
+
+
+        $errors['login'] = "Le mot de passe que vous avez entré est incorrect.";
+
+
 
         redirect_with('login.php', [
             'errors' => $errors,

@@ -57,7 +57,6 @@ require __DIR__ . '/../../src/approve.php';
                         </td>';
         }
         echo '</tr>
-    
         </table>';
     } ?>
 

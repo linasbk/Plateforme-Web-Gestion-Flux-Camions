@@ -63,8 +63,20 @@ function check_password(string $username, string $password): bool
     return false;
 }
 
+function get_email(string $username)
+{
+
+    $user = find_user_by_username($username);
+
+    return $user['email'];
+}
 
 
+function check_email(string $email): bool
+{
+    if ($email ==  $_SESSION['email']) return true;
+    return false;
+}
 
 function change_password(string $username, string $password): bool
 {
