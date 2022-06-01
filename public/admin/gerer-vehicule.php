@@ -14,7 +14,7 @@ require_admin();
 
     <?php
     #$date = "20" . date('y-n-d');
-    csv_table("2022-5-23", '0', '');
+    csv_table('0', '');
     ?>
 
 

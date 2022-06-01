@@ -31,7 +31,7 @@ require_admin();
         $fromdate = formatdate($_POST['fromdate']);
         $todate   = formatdate($_POST['todate']);
 
-        csv_table($todate, 0, 'IN');
+        csv_table(3, $fromdate);
     } ?>
 </div>
 <?php view('footer') ?>

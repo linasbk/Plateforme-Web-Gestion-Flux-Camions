@@ -15,7 +15,7 @@ require_admin();
         <div>
             <img class="truck " src="../images/truck3.png" alt="truck">
             <div>
-                <span><?php csv_unique("2022-5-23", '1') ?></span>
+                <span><?php echo csv_table('0', 'in', '0') ?></span>
                 <p>Véhicules entrés aujourd'hui</p>
             </div>
 
@@ -24,7 +24,7 @@ require_admin();
 
         <div>
             <img class="truck " src="../images/truck.png" alt="truck">
-            <div><span>2</span>
+            <div><span><?php echo csv_table('0', 'out', '0') ?></span>
                 <p>Véhicules entrés hier</p>
             </div>
         </div>
@@ -32,7 +32,7 @@ require_admin();
         <div>
             <img class="truck " src="../images/truck1.png" alt="truck">
             <div>
-                <span>4</span>
+                <span></span>
                 <p>Véhicules entrés cette semaine</p>
             </div>
 
@@ -42,7 +42,7 @@ require_admin();
         <div>
             <img class="truck" src="../images/truck2.png" alt="truck">
             <div>
-                <span>5</span>
+                <span><?php echo csv_unique('2') ?></span>
                 <p>Totale de véhicules entrés</p>
             </div>
         </div>

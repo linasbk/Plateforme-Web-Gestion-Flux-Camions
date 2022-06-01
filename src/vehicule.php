@@ -50,28 +50,31 @@ function color_html($word)
     else show_html($word, 'black');
 }
 
-function  csv_table($date, $searchcolumn, $searchvalue): bool
+function  csv_table($searchcolumn, $searchvalue, $print = '1', $date = FILE_DATE)
 {
 
     $check = true;
-    $tabheader = "<table  border='1' cellpadding='15' id='searchtable' class=''>
-<tr>
-    <th>Accès</th>
-    <th>Matricule</th>
-    <th>Date</th>
-    <th>Heure</th>
-    <th>image</th>
-    <th>Sûreté</th>
-</tr>
-<tr>
-";
+    if ($print) {
+        $tabheader = "<table  border='1' cellpadding='15' id='searchtable' class=''>
+        <tr>
+            <th>Accès</th>
+            <th>Matricule</th>
+            <th>Date</th>
+            <th>Heure</th>
+            <th>image</th>
+            <th>Sûreté</th>
+        </tr>
+        <tr>
+        ";
+    }
+
 
     # $f = fopen("../files/-$date-.csv", "r");
     $f = fopen("../files/-$date-.csv", "r");
 
     fgetcsv($f); #skips the first line
 
-
+    $number = 0;
     while (($line = fgetcsv($f)) !== false) {
 
 
@@ -81,30 +84,33 @@ function  csv_table($date, $searchcolumn, $searchvalue): bool
 
             if (isset($value[$searchcolumn]) && stripos($value[$searchcolumn], trim($searchvalue)) !== false) {
 
-                if ($check) {
+                if ($check  && $print) {
                     echo $tabheader;
                     $check = false;
                 }
 
+
                 foreach ($value as $word) {
-
-                    if (is_image($word)) show_image($word);
-                    else
-                        color_html($word);
+                    if ($print) {
+                        if (is_image($word)) show_image($word);
+                        else
+                            color_html($word);
+                    }
                 }
-
-                echo "</tr>\n";
+                $number++;
+                if ($print) echo "</tr>\n";
             }
         }
     }
     fclose($f);
-    if (!$check) echo "</tr>
+    if (!$check && $print) echo "</tr>
     </table> <input class='imprimer' type='button' onclick='impri()' value='Imprimé'/>
     ";
-    return $check;
+
+    return $number;
 }
 
-function  csv_unique($date, $column)
+function csv_unique($column, $date = FILE_DATE)
 {
     // this array will hold the results
     $unique = array();
@@ -125,5 +131,5 @@ function  csv_unique($date, $column)
     $result = array_unique($unique);
     $result = array_filter($result);
 
-    echo (count($result));
+    return (count($result));
 }
