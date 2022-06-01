@@ -103,3 +103,27 @@ function  csv_table($date, $searchcolumn, $searchvalue): bool
     ";
     return $check;
 }
+
+function  csv_unique($date, $column)
+{
+    // this array will hold the results
+    $unique = array();
+
+    $f = fopen("../files/-$date-.csv", "r");
+    fgetcsv($f); #skips the first line
+
+    // read the rows of the csv file
+    while (($line = fgetcsv($f)) !== false) {
+
+        foreach ($line as $cell) {
+            $value = explode(';', $cell);
+
+            if (isset($value[$column])) $unique[] = $value[$column];
+        }
+    }
+
+    $result = array_unique($unique);
+    $result = array_filter($result);
+
+    echo (count($result));
+}

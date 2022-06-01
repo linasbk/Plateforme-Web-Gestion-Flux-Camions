@@ -15,7 +15,7 @@ require_admin();
         <div>
             <img class="truck " src="../images/truck3.png" alt="truck">
             <div>
-                <span>2</span>
+                <span><?php csv_unique("2022-5-23", '1') ?></span>
                 <p>Véhicules entrés aujourd'hui</p>
             </div>
 
