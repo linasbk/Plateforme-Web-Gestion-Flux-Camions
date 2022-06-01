@@ -46,8 +46,8 @@ require __DIR__ . '/../../src/vehicule.php';
 
                 <li>
                     <a href="gerer-utilisateur.php"> <i class='bx bxs-user icon'></i>
-                        <span class="text nav-text">Gérer les utilisateur <?php if (users_exist_innaproved() > 0)
-                                                                                echo '<approved>' . users_exist_innaproved() . '</approved>'; ?></span>
+                        <span class="text nav-text">Gérer utilisateur <?php if (users_exist_innaproved() > 0)
+                                                                            echo '<approved>' . users_exist_innaproved() . '</approved>'; ?></span>
                     </a>
                 </li>
 

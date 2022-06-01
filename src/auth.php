@@ -64,6 +64,8 @@ function check_password(string $username, string $password): bool
 }
 
 
+
+
 function change_password(string $username, string $password): bool
 {
     $sql = 'UPDATE users SET password = :password WHERE username = :username';
@@ -76,7 +78,6 @@ function change_password(string $username, string $password): bool
 
     return $statement->execute();
 }
-
 
 
 
