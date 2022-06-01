@@ -9,18 +9,19 @@ function show(el) {
     if (flag == 1) {
         flag = 0;
         // Set image size to original
-        img.style.transform = "scale(1)";
-        img.style.transition = "transform 0.35s ease";
+        
+        img.classList.remove("scalebig");
+        img.classList.add("scalesmall");
         img.classList.remove("center");
+     
 
 
     } else if (flag == 0) {
         flag = 1;
+        img.classList.remove("scalesmall");
+        img.classList.add("scalebig");
         img.classList.add("center");
-        // Set image size to 1.5 times original
-        img.style.transform = "scale(8)";
-        // Animation effect
-        img.style.transition = "transform 0.35s ease";
+     
 
     }
 

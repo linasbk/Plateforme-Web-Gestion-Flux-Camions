@@ -306,7 +306,7 @@ body.dark {
     list-style: none;
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 .aside .header .image,
@@ -332,7 +332,7 @@ body.dark {
 }
 
 .aside .text {
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 500;
     white-space: nowrap;
     opacity: 1;
@@ -1064,4 +1064,18 @@ body::-webkit-scrollbar-thumb {
     background-color: #535c61;
     outline: 1px solid #535c61;
     border-radius: 8px;
+}
+
+.scalesmall {
+
+
+    transition: 0.35s ease;
+
+}
+
+.scalebig {
+
+    transform: scale(8);
+    transition: 0.35s ease;
+
 }

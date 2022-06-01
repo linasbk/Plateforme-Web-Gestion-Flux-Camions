@@ -25,7 +25,7 @@ require_admin();
         <div>
             <img class="truck " src="../images/truck.png" alt="truck">
             <div><span><?php echo csv_table('0', 'out', '0') ?></span>
-                <p>Véhicules entrés hier</p>
+                <p>Véhicules sortis aujourd'hui</p>
             </div>
         </div>
 
