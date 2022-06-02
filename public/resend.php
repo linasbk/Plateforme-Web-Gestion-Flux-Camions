@@ -6,6 +6,7 @@ require __DIR__ . '/../src/resend.php';
 
 <?php view('header', ['title' => "Renvoyer Email", 'css' => 'register']) ?>
 
+
 <div class="indexbody">
 
     <div class="login-wrapper">

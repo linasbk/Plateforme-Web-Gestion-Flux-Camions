@@ -34,6 +34,8 @@ function fill_activation_values($email, $activation_code, $activation_expiry =  
 
 if (is_post_request()) {
 
+
+
     if (isset($_POST['email'])) $email = $_POST['email'];
     if (check_email($email)) {
 
