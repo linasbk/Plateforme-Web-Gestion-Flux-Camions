@@ -55,8 +55,10 @@ require_admin();
             $currentpassword = $_POST['currentpassword'];
 
             if (check_password($username, $currentpassword)) {
-                change_password($username, $password);
-                echo '<small class="info">Mot de passe changé avec succès.<small>';
+                if (secure_password($password)) {
+                    change_password($username, $password);
+                    echo '<small class="info">Mot de passe changé avec succès.<small>';
+                } else  echo '<small class="info-red">Le mot de passe doit avoir entre 8 et 64 caractères et contenir au moins un chiffre, une lettre majuscule, une lettre minuscule.</small>';
             } else echo '<small class="info-red">Mot de passe actuel incorrect .<small>';
         }
         ?>

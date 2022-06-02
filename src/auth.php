@@ -23,13 +23,14 @@ require 'remember.php';
 
 function register_user(string $email, string $username, string $password, string $activation_code, int $expiry = 1 * 24  * 60 * 60, bool $is_admin = false): bool
 {
-    $sql = 'INSERT INTO users(username, email, password, is_admin, activation_code, activation_expiry , approved)
-            VALUES(:username, :email, :password, :is_admin, :activation_code,:activation_expiry ,:approved )';
+    $sql = 'INSERT INTO users(username, email, password, is_admin, active ,activation_code, activation_expiry , approved)
+            VALUES(:username, :email, :password, :is_admin, :active, :activation_code,:activation_expiry ,:approved )';
 
     #give a  way to set the admin account
     if ($username == "admin") {
         $is_admin = 1;
         $is_approved = 1;
+        $is_active = 1;
     }
 
     $statement = db()->prepare($sql);
@@ -40,6 +41,7 @@ function register_user(string $email, string $username, string $password, string
 
     $statement->bindValue(':is_admin', (int)$is_admin, PDO::PARAM_INT);
     $statement->bindValue(':approved', (int)$is_approved, PDO::PARAM_INT);
+    $statement->bindValue(':active', (int)$is_active, PDO::PARAM_INT);
 
     $statement->bindValue(':activation_code', password_hash($activation_code, PASSWORD_DEFAULT));
     $statement->bindValue(':activation_expiry', date('Y-m-d H:i:s',  time() + $expiry));
@@ -556,4 +558,12 @@ function is_active($username): bool
         return true;
 
     return false;
+}
+
+function secure_password($password): bool
+{
+
+    #$pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#";
+    $pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#"; #for special charachters
+    return preg_match($pattern, $password);
 }

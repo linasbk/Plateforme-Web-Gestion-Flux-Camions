@@ -39,14 +39,6 @@ function find_reset_codes(string $reset_code, string $email)
     return null;
 }
 
-function secure_password($password): bool
-{
-
-    #$pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#";
-    $pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#"; #for special charachters
-    return preg_match($pattern, $password);
-}
-
 
 
 #code run
