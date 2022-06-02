@@ -3,8 +3,6 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-
-
 function generate_reset_code(): string
 {
     return bin2hex(random_bytes(16));
@@ -58,13 +56,13 @@ function send_Reset_email(string $email, string $reset_code): void
                         <tr>
                             <td>
                                 <p style="color:black;font:size:16px padding:0px 100px; padding-bottom:10px;">
-                                    Veuillez cliquer sur le bouton pour activer votre compte :
+                                    Veuillez cliquer sur ce bouton pour modifier votre mot de passe :
                                 </p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                            <a  href="' . $reset_code . '" style="margin:10px 0px 30px 0px;border-radius:4px;  text-decoration: none; padding:10px 20px;border: 0;color:#fff;background-color:#ff6b00;">Vérifier votre email</a>
+                            <a  href="' .  $reset_link . '" style="margin:10px 0px 30px 0px;border-radius:4px;  text-decoration: none; padding:10px 20px;border: 0;color:#fff;background-color:#ff6b00;">modifier</a>
                             </td>
                         </tr>
                         <br>
@@ -75,7 +73,7 @@ function send_Reset_email(string $email, string $reset_code): void
 Si cela ne fonctionne pas, veuillez copiez et 
 collez le lien suivant dans votre navigateur :</pre>
 
-                                <a href="' . $reset_code . '">' . $reset_code . '</a>
+                                <a href="' .  $reset_link . '">' . $reset_link . '</a>
                             </td>
                          
                         </tr>
@@ -90,30 +88,30 @@ collez le lien suivant dans votre navigateur :</pre>
     
     </html>';
 
-    // email header
-    $header = "From: " . "innovatel.sup@hotmail.com";
 
     // send the email
 
     $mail = new PHPMailer();
-    $mail->IsSMTP();
-    $mail->Mailer = "tls";
-    $mail->SMTPDebug  = 1;
+    #$mail->IsSMTP();
+    $mail->Mailer = "smtp";
+    $mail->SMTPDebug  = 0;
     $mail->SMTPAuth   = TRUE;
-    $mail->SMTPSecure = "SSL";
-    $mail->Port       = 465;
-    $mail->Host       = "smtp.live.com";
-    $mail->Username   = "Innovatel.sup@hotmail.com";
-    $mail->Password   = "Innovatel12345@@@";
+    $mail->SMTPSecure = "tls";
+    $mail->Port       = 587;
+    $mail->Host       = "smtp.gmail.com";
+    $mail->Username   = SENDER_MAIL;
+    $mail->Password   = SENDER_PASS;
+
 
     $mail->IsHTML(true);
     $mail->AddAddress($email, "client");
-    $mail->SetFrom("innovatel.sup@hotmail.com", "innovatel");
+    $mail->SetFrom("Innovatel.sup@gmail.com", "innovatel", 0);
 
     $mail->Subject = $subject;
     $mail->MsgHTML($message);
     $mail->Send();
 }
+
 
 
 function fill_reset_values($email, $reset_code, $reset_expiry =  60 * 60 * 20)

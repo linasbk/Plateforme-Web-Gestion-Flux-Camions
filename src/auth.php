@@ -372,7 +372,7 @@ function send_activation_email(string $email, string $activation_code): void
                         <tr>
                             <td>
                                 <p style="color:black;font:size:16px padding:0px 100px; padding-bottom:10px;">
-                                    Veuillez cliquer sur le bouton pour activer votre compte :
+                                    Veuillez cliquer sur ce bouton pour activer votre compte :
                                 </p>
                             </td>
                         </tr>
@@ -404,25 +404,24 @@ collez le lien suivant dans votre navigateur :</pre>
     
     </html>';
 
-    // email header
-    $header = "From: " . "innovatel.sup@hotmail.com";
 
     // send the email
 
     $mail = new PHPMailer();
     #$mail->IsSMTP();
-    $mail->Mailer = "tls";
-    $mail->SMTPDebug  = 1;
+    $mail->Mailer = "smtp";
+    $mail->SMTPDebug  = 0;
     $mail->SMTPAuth   = TRUE;
-    $mail->SMTPSecure = "ssl";
-    $mail->Port       = 465;
-    $mail->Host       = "smtp.live.com";
-    $mail->Username   = "Innovatel.sup@outlook.com";
-    $mail->Password   = "Innovatel12345@@@";
+    $mail->SMTPSecure = "tls";
+    $mail->Port       = 587;
+    $mail->Host       = "smtp.gmail.com";
+    $mail->Username   = SENDER_MAIL;
+    $mail->Password   = SENDER_PASS;
+
 
     $mail->IsHTML(true);
     $mail->AddAddress($email, "client");
-    $mail->SetFrom("innovatel.sup@hotmail.com", "innovatel");
+    $mail->SetFrom("Innovatel.sup@gmail.com", "innovatel", 0);
 
     $mail->Subject = $subject;
     $mail->MsgHTML($message);
