@@ -12,7 +12,7 @@ function delete_reset_code_by_email($email)
 function find_reset_codes(string $reset_code, string $email)
 {
 
-    $sql = 'SELECT id, username,reset_code, reset_expiry < now() as expired
+    $sql = 'SELECT id,username,reset_code, reset_expiry < now() as expired
             FROM users
             WHERE email=:email';
 
@@ -39,15 +39,30 @@ function find_reset_codes(string $reset_code, string $email)
     return null;
 }
 
-$user = find_reset_codes($_GET['reset_code'], $_GET['email']);
+if (find_reset_codes($_GET['reset_code'], $_GET['email']) != NULL) {
 
-if (isset($_POST['submit']) && isset($user)) {
+    $user = find_reset_codes($_GET['reset_code'], $_GET['email']);
 
 
-    $password = $_POST['confirmpassword'];
-    $username = $user['username'];
+    if (isset($_POST['submit']) && isset($user)) {
 
-    if (change_password($username, $password))
-        echo '<small class="info">Mot de passe changé avec succès.<small>';
-    else echo '<small class="info-red">Mot de passe actuel incorrect .<small>';
+
+        $password = $_POST['confirmpassword'];
+        $username = $user['username'];
+
+        if (change_password($username, $password)) {
+            delete_reset_code_by_email($_GET['email']);
+            echo '<div style="width:min-width; padding: 6px; text-align:center; background-color:#0e171e ;color:white ; position:relative;" class="alert">Mot de passe changé avec succès</div>';
+            redirect_with_message(
+                'login.php',
+                'Mot de passe changé avec succès.'
+            );
+        } else echo '<small class="info-red">erreur.<small>';
+    }
+} else {
+
+    redirect_with_message(
+        'forgot-password.php',
+        "Le lien n'est plus valid."
+    );
 }

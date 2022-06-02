@@ -43,7 +43,7 @@ require __DIR__ . '/../src/checkreset.php';
 
                         <small class="info-red" id='info-error'></small>
                         <button name="submit" type="submit" class="submit-btn">Réinitialiser</button>
-
+                        <footer class="insfooter"> <a href="login.php">Se connecter</a></footer>
 
                     </form>
 
