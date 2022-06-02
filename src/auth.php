@@ -371,14 +371,14 @@ function send_activation_email(string $email, string $activation_code): void
                         </tr>
                         <tr>
                             <td>
-                                <p style="color:black;font:size:16px padding:0px 100px; padding-bottom:10px;">
+                                <p style="color:black; font-size:16px; padding:0px 100px; padding-bottom:10px; margin-bottom: 30px;">
                                     Veuillez cliquer sur ce bouton pour activer votre compte :
                                 </p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                            <a  href="' . $activation_link . '" style="margin:10px 0px 30px 0px;border-radius:4px;  text-decoration: none; padding:10px 20px;border: 0;color:#fff;background-color:#ff6b00;">Vérifier votre email</a>
+                            <a  href="' . $activation_link . '" style="margin:10px 0px 30px 0px; border-radius:4px;  text-decoration: none; padding:10px 20px;border: 0;color:#fff;background-color:#ff6b00;">Vérifier votre email</a>
                             </td>
                         </tr>
                         <br>

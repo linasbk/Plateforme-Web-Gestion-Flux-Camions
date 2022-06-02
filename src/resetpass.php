@@ -55,7 +55,7 @@ function send_Reset_email(string $email, string $reset_code): void
                         </tr>
                         <tr>
                             <td>
-                                <p style="color:black;font:size:16px padding:0px 100px; padding-bottom:10px;">
+                                <p style="color:black; font-size:16px; padding:0px 100px; padding-bottom:10px; margin-bottom: 30px;">
                                     Veuillez cliquer sur ce bouton pour modifier votre mot de passe :
                                 </p>
                             </td>

@@ -52,6 +52,8 @@ if (find_reset_codes($_GET['reset_code'], $_GET['email']) != NULL) {
 
     $user = find_reset_codes($_GET['reset_code'], $_GET['email']);
 
+    activate_user($user['id']);
+
 
     if (isset($_POST['submit']) && isset($user)) {
 
