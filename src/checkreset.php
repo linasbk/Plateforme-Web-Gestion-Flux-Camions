@@ -39,6 +39,16 @@ function find_reset_codes(string $reset_code, string $email)
     return null;
 }
 
+function secure_password($password): bool
+{
+
+    #$pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#";
+    $pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#"; #for special charachters
+    return preg_match($pattern, $password);
+}
+
+
+
 #code run
 
 
@@ -57,14 +67,16 @@ if (find_reset_codes($_GET['reset_code'], $_GET['email']) != NULL) {
         $password = $_POST['confirmpassword'];
         $username = $user['username'];
 
-        if (change_password($username, $password)) {
+        if (secure_password($password)) {
+
+            change_password($username, $password);
             delete_reset_code_by_email($_GET['email']);
             echo '<div style="width:min-width; padding: 6px; text-align:center; background-color:#0e171e ;color:white ; position:relative;" class="alert">Mot de passe changé avec succès</div>';
             redirect_with_message(
                 'login.php',
                 'Mot de passe changé avec succès.'
             );
-        } else echo '<small class="info-red">erreur.<small>';
+        } else echo '<div style="width:min-width; padding: 6px; text-align:center; background-color:#0e171e ;color:white ; position:relative;" class="alert">Le mot de passe doit avoir entre 8 et 64 caractères et contenir au moins un chiffre, une lettre majuscule, une lettre minuscule.</div>';
     }
 } else {
 
