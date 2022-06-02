@@ -16,7 +16,7 @@ function send_Reset_email(string $email, string $reset_code): void
 
     // create the activation link
     $reset_link = APP_URL . "/reset.php?email=$email&reset_code=$reset_code";
-    echo $reset_link;
+
     // set email subject & body
     $subject = 'Veuillez changer votre mot de passe';
     $message = '<!DOCTYPE html>
@@ -116,14 +116,36 @@ collez le lien suivant dans votre navigateur :</pre>
 }
 
 
+function fill_reset_values($email, $reset_code, $reset_expiry =  1200)
+{
+
+
+    $sql = 'UPDATE users SET reset_code = :reset_code, reset_expiry = :reset_expiry WHERE email = :email ';
+
+    $statement = db()->prepare($sql);
+    $statement->bindValue(':email', $email);
+
+    $statement->bindValue(':reset_code', password_hash($reset_code, PASSWORD_DEFAULT));
+    $statement->bindValue(':reset_expiry', date('Y-m-d H:i:s',  time() + $reset_expiry));
+
+    return $statement->execute();
+}
+
+
+
+
+
 if (isset($_POST['submit']) && isset($_SESSION['email'])) {
 
 
     $email = $_POST['email'];
 
-    $reset_code = generate_reset_code();;
+    $reset_code = generate_reset_code();
 
     if (check_email($_POST['email']))
 
-        send_Reset_email($email, $reset_code);
+        fill_reset_values($email, $reset_code);
+    #send_Reset_email($email, $reset_code);
+    $reset_link = APP_URL . "/reset.php?email=$email&reset_code=$reset_code";
+    echo $reset_link;
 }

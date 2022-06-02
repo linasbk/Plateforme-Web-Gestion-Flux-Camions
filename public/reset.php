@@ -1,9 +1,20 @@
 <?php
 require __DIR__ . '/../src/bootstrap.php';
+require __DIR__ . '/../src/checkreset.php';
 ?>
 
 <?php view('header', ['title' => 'Réinitialiser votre mot de passe', 'css' => 'register']) ?>
 
+<script type="text/javascript">
+    function checkpass() {
+        if (document.changepassword.newpassword.value != document.changepassword.confirmpassword.value) {
+            document.getElementById("info-error").innerHTML = 'Les deux mot de passe ne correspond pas';
+            document.changepassword.confirmpassword.focus();
+            return false;
+        }
+        return true;
+    }
+</script>
 
 <div class="indexbody">
 
@@ -14,32 +25,25 @@ require __DIR__ . '/../src/bootstrap.php';
 
                 <div class="Form" id="loginForm">
 
-                    <form action="#" method="post">
+                    <form action="" method="post" enctype="multipart/form-data" name="changepassword" onsubmit="return checkpass();">
 
-
-                        <div class="input-group">
-                            <input type="password" name="currentpassword" id="currentpassword" value="<?= $inputs['password'] ?? '' ?>" class="<?= error_class($errors, 'password') ?>" required>
-                            <label for="password">Mot de passe actuelle</label>
-                            <small><?= $errors['password'] ?? '' ?></small>
-                        </div>
 
 
                         <div class="input-group">
-                            <input type="password" name="password" id="password" value="<?= $inputs['password'] ?? '' ?>" class="<?= error_class($errors, 'password') ?>" required>
-                            <label for="password">Mot de passe</label>
-                            <small><?= $errors['password'] ?? '' ?></small>
+                            <input type="password" name="newpassword" id="newpassword" required>
+                            <label for="newpassword">nouveau mot de passe</label>
+
                         </div>
 
                         <div class="input-group">
-                            <input type="password" name="password2" id="password2" value="<?= $inputs['password2'] ?? '' ?>" class="<?= error_class($errors, 'password2') ?>" required>
-                            <label for="password2">Confirmez le mot de passe</label>
-                            <small><?= $errors['password2'] ?? '' ?></small>
+                            <input type="password" name="confirmpassword" id="confirmpassword" required>
+                            <label for="confirmpassword">Confirmez le mot de passe</label>
+
                         </div>
 
+                        <small class="info-red" id='info-error'></small>
+                        <button name="submit" type="submit" class="submit-btn">Réinitialiser</button>
 
-                        <button type="submit" class="submit-btn">Réinitialiser</button>
-
-                        <footer class="insfooter">Déjà membre? <a href="login.php">Se connecter</a></footer>
 
                     </form>
 
