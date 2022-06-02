@@ -533,3 +533,27 @@ function is_user_exist($username): bool
 
     return false;
 }
+
+
+
+function is_approved($username): bool
+{
+
+    $user = find_user_by_username($username);
+    if ($user['approved'])
+        return true;
+
+    return false;
+}
+
+
+
+function is_active($username): bool
+{
+
+    $user = find_user_by_username($username);
+    if ($user['is_active'])
+        return true;
+
+    return false;
+}

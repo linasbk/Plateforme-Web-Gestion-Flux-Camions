@@ -2,7 +2,7 @@
 require __DIR__ . '/../src/bootstrap.php';
 ?>
 
-<?php view('header', ['title' => 'Inscription', 'css' => 'Réinitialiser votre mot de passe']) ?>
+<?php view('header', ['title' => 'Réinitialiser votre mot de passe', 'css' => 'register']) ?>
 
 
 <div class="indexbody">
@@ -14,16 +14,15 @@ require __DIR__ . '/../src/bootstrap.php';
 
                 <div class="Form" id="loginForm">
 
-                    <form action="register.php" method="post">
-
-
+                    <form action="reset.php" method="post">
 
 
                         <div class="input-group">
-                            <input type="email" name="email" id="email" value="<?= $inputs['email'] ?? '' ?>" class="<?= error_class($errors, 'email') ?>" required>
-                            <label for="email">Email</label>
-                            <small><?= $errors['email'] ?? '' ?></small>
+                            <input type="password" name="currentpassword" id="currentpassword" value="<?= $inputs['password'] ?? '' ?>" class="<?= error_class($errors, 'password') ?>" required>
+                            <label for="password">Mot de passe actuelle</label>
+                            <small><?= $errors['password'] ?? '' ?></small>
                         </div>
+
 
                         <div class="input-group">
                             <input type="password" name="password" id="password" value="<?= $inputs['password'] ?? '' ?>" class="<?= error_class($errors, 'password') ?>" required>
@@ -38,7 +37,7 @@ require __DIR__ . '/../src/bootstrap.php';
                         </div>
 
 
-                        <button type="submit" class="submit-btn">Inscription</button>
+                        <button type="submit" class="submit-btn">Réinitialiser</button>
 
                         <footer class="insfooter">Déjà membre? <a href="login.php">Se connecter</a></footer>
 

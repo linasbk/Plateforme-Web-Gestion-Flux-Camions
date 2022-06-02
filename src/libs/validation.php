@@ -11,7 +11,7 @@ const DEFAULT_VALIDATION_ERRORS = [
     'alphanumeric' => "Le nom d'utilisateur ne doit contenir que des lettres et des chiffres.",
     'secure' => 'Le mot de passe doit avoir entre 8 et 64 caractères et contenir au moins un chiffre, une lettre majuscule, une lettre minuscule.',
     'unique' => 'existe déjà',
-    'approved' => "Le compte n'exist pas ou il n'a pas été aprouvé par l'admin."
+
 ];
 
 
@@ -219,15 +219,4 @@ function is_unique(array $data, string $field, string $table, string $column): b
     $stmt->execute();
 
     return $stmt->fetchColumn() === false;
-}
-
-
-function is_approved(): bool
-{
-    $username = $_POST['username'];
-    $user = find_user_by_username($username);
-    if ($user['approved'])
-        return true;
-
-    return false;
 }

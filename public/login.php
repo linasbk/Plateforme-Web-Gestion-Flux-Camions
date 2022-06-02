@@ -35,7 +35,7 @@ require __DIR__ . '/../src/login.php';
                                 </small>
                             <?php endif ?>
 
-                            <small><?= $errors['approved'] ?? '' ?></small>
+
 
                         </div>
 

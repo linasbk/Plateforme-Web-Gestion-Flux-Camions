@@ -13,8 +13,7 @@ if (is_post_request()) {
     [$inputs, $errors] = filter($_POST, [
         'username' => 'string | required',
         'password' => 'string | required',
-        'remember_me' => 'string',
-        'approved' => 'string | approved'
+        'remember_me' => 'string'
     ]);
 
 
@@ -23,7 +22,16 @@ if (is_post_request()) {
         redirect_with('login.php', ['errors' => $errors, 'inputs' => $inputs]);
     }
 
-    if (!check_password($inputs['username'], $inputs['password'])) {
+    if (!is_user_exist($inputs['username'])) {
+
+        $errors['login'] = "Le compte n'exist pas.";
+
+        redirect_with('login.php', [
+            'errors' => $errors,
+            'inputs' => $inputs
+        ]);
+    } else if (!check_password($inputs['username'], $inputs['password'])) {
+
 
         $email = get_email($inputs['username']);
         $_SESSION['email'] = $email;
@@ -36,15 +44,28 @@ if (is_post_request()) {
             'errors' => $errors,
             'inputs' => $inputs
         ]);
-    }
+    } else if (!is_active($inputs['username'])) {
 
-    if (!is_user_exist($inputs['username'])) {
-        $errors['login'] = "Le compte n'exist pas.";
+        $errors['login'] = "Le compte n'a pas été activer par email.";
+
+
+        redirect_with('login.php', [
+            'errors' => $errors,
+            'inputs' => $inputs
+        ]);
+    } else if (!is_approved($inputs['username'])) {
+
+
+
+        $errors['login'] = "Le compte n'a pas été activer par l'admin.";
+
+
         redirect_with('login.php', [
             'errors' => $errors,
             'inputs' => $inputs
         ]);
     }
+
 
     // if login fails
     if (!login($inputs['username'], $inputs['password'], isset($inputs['remember_me']))) {
