@@ -39,6 +39,13 @@ function find_reset_codes(string $reset_code, string $email)
     return null;
 }
 
+#code run
+
+
+if (is_user_logged_in()) {
+    redirect_to('index.php');
+}
+
 if (find_reset_codes($_GET['reset_code'], $_GET['email']) != NULL) {
 
     $user = find_reset_codes($_GET['reset_code'], $_GET['email']);
@@ -62,7 +69,7 @@ if (find_reset_codes($_GET['reset_code'], $_GET['email']) != NULL) {
 } else {
 
     redirect_with_message(
-        'forgot-password.php',
+        'forgot-password.php?email=' . $_GET['email'],
         "Le lien n'est plus valid."
     );
 }

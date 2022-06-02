@@ -763,11 +763,12 @@ body .main {
 }
 
 .forgot-password {
-
+    color: white;
+    text-decoration: underline;
     font-weight: bold;
 }
 
 .forgot-password:hover {
-
+    color: #f16e27;
     text-decoration: underline;
 }

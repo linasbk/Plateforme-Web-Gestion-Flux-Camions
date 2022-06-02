@@ -116,7 +116,7 @@ collez le lien suivant dans votre navigateur :</pre>
 }
 
 
-function fill_reset_values($email, $reset_code, $reset_expiry =  1200)
+function fill_reset_values($email, $reset_code, $reset_expiry =  60 * 60 * 20)
 {
 
 
@@ -133,7 +133,9 @@ function fill_reset_values($email, $reset_code, $reset_expiry =  1200)
 
 
 
-
+if (is_user_logged_in()) {
+    redirect_to('index.php');
+}
 
 if (isset($_POST['submit']) && isset($_SESSION['email'])) {
 
@@ -142,10 +144,15 @@ if (isset($_POST['submit']) && isset($_SESSION['email'])) {
 
     $reset_code = generate_reset_code();
 
-    if (check_email($_POST['email']))
+    if (isset($_POST['email']))  $email = $_POST['email'];
+
+    else $email = $_GET['email'];
+
+    if (check_email($email)) {
 
         fill_reset_values($email, $reset_code);
-    #send_Reset_email($email, $reset_code);
-    $reset_link = APP_URL . "/reset.php?email=$email&reset_code=$reset_code";
-    echo $reset_link;
+        #send_Reset_email($email, $reset_code);
+        $reset_link = APP_URL . "/reset.php?email=$email&reset_code=$reset_code";
+        echo $reset_link;
+    }
 }
