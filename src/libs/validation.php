@@ -11,7 +11,7 @@ const DEFAULT_VALIDATION_ERRORS = [
     'alphanumeric' => "Le nom d'utilisateur ne doit contenir que des lettres et des chiffres.",
     'secure' => 'Le mot de passe doit avoir entre 8 et 64 caractères et contenir au moins un chiffre, une lettre majuscule, une lettre minuscule.',
     'unique' => 'existe déjà',
-    'approved' => "Le compte n'a pas été aprouvé par l'admin."
+    'approved' => "Le compte n'exist pas ou il n'a pas été aprouvé par l'admin."
 ];
 
 

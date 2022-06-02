@@ -16,7 +16,7 @@ function send_Reset_email(string $email, string $reset_code): void
 
     // create the activation link
     $reset_link = APP_URL . "/reset.php?email=$email&reset_code=$reset_code";
-
+    echo $reset_link;
     // set email subject & body
     $subject = 'Veuillez changer votre mot de passe';
     $message = '<!DOCTYPE html>
@@ -115,8 +115,8 @@ collez le lien suivant dans votre navigateur :</pre>
     $mail->Send();
 }
 
-
-if (isset($_POST['submit'])) {
+echo $_SESSION['acivation_link'];
+if (isset($_POST['submit']) && isset($_SESSION['email'])) {
 
 
     $email = $_POST['email'];
@@ -125,7 +125,5 @@ if (isset($_POST['submit'])) {
 
     if (check_email($_POST['email']))
 
-        #send_Reset_email($email, $reset_code);
-        echo 'sa marche';
-    session_destroy();
+        send_Reset_email($email, $reset_code);
 }

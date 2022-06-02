@@ -31,7 +31,7 @@ require __DIR__ . '/../src/login.php';
                             <?php if (isset($errors['login'])) : ?>
                                 <small>
                                     <?= $errors['login'] ?>
-                                    <a class="forgot-password" href="forgot-password.php"> Mot de passe oublié?</a>
+
                                 </small>
                             <?php endif ?>
 
