@@ -405,24 +405,24 @@ collez le lien suivant dans votre navigateur :</pre>
     </html>';
 
     // email header
-    $header = "From: " . "innovatelsup@gmail.com";
+    $header = "From: " . "innovatel.sup@hotmail.com";
 
     // send the email
 
     $mail = new PHPMailer();
-    $mail->IsSMTP();
-    $mail->Mailer = "smtp";
-    $mail->SMTPDebug  = 0;
+    #$mail->IsSMTP();
+    $mail->Mailer = "tls";
+    $mail->SMTPDebug  = 1;
     $mail->SMTPAuth   = TRUE;
-    $mail->SMTPSecure = "tls";
-    $mail->Port       = 587;
-    $mail->Host       = "smtp.gmail.com";
-    $mail->Username   = "innovatel.sup@gmail.com";
-    $mail->Password   = "Innovatel12345";
+    $mail->SMTPSecure = "ssl";
+    $mail->Port       = 465;
+    $mail->Host       = "smtp.live.com";
+    $mail->Username   = "Innovatel.sup@outlook.com";
+    $mail->Password   = "Innovatel12345@@@";
 
     $mail->IsHTML(true);
     $mail->AddAddress($email, "client");
-    $mail->SetFrom("innovatel.sup@gmail.com", "innovatel");
+    $mail->SetFrom("innovatel.sup@hotmail.com", "innovatel");
 
     $mail->Subject = $subject;
     $mail->MsgHTML($message);
