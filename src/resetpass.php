@@ -65,10 +65,12 @@ function send_Reset_email(string $email, string $reset_code): void
                             <a  href="' .  $reset_link . '" style="margin:10px 0px 30px 0px;border-radius:4px;  text-decoration: none; padding:10px 20px;border: 0;color:#fff;background-color:#ff6b00;">modifier</a>
                             </td>
                         </tr>
+            
                         <br>
                        
                         <tr>
                             <td>
+                            <p style="margin:10px 0px 30px 0px;border-radius:4px;  text-decoration: none; padding:10px 20px;border: 0;color:#fff;background-color:#ff6b00;">se lien va expirer dans 20 minutes</p>
                             <pre style="color:black;font:size:16px padding-bottom:10px;">
 Si cela ne fonctionne pas, veuillez copiez et 
 collez le lien suivant dans votre navigateur :</pre>
@@ -114,7 +116,7 @@ collez le lien suivant dans votre navigateur :</pre>
 
 
 
-function fill_reset_values($email, $reset_code, $reset_expiry =  60 * 60 * 20)
+function fill_reset_values($email, $reset_code, $reset_expiry =  1600)
 {
 
 
