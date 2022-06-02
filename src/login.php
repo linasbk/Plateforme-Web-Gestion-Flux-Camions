@@ -72,7 +72,7 @@ if (is_post_request()) {
 
 
 
-        $errors['login'] =  "Le compte n'a pas été activer par l'admin.";
+        $errors['login'] =  "autre error.";
 
         redirect_with('login.php', [
             'errors' => $errors,

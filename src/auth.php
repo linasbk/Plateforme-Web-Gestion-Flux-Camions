@@ -552,7 +552,7 @@ function is_active($username): bool
 {
 
     $user = find_user_by_username($username);
-    if ($user['is_active'])
+    if ($user['active'])
         return true;
 
     return false;

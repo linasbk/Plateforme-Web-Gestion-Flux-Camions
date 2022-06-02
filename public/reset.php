@@ -14,7 +14,7 @@ require __DIR__ . '/../src/bootstrap.php';
 
                 <div class="Form" id="loginForm">
 
-                    <form action="reset.php" method="post">
+                    <form action="#" method="post">
 
 
                         <div class="input-group">
