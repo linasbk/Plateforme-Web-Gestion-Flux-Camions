@@ -131,27 +131,30 @@ function fill_reset_values($email, $reset_code, $reset_expiry =   20 * 60)
     return $statement->execute();
 }
 
+if (is_post_request()) {
+
+    if (is_user_logged_in()) {
+        redirect_to('index.php');
+    }
+
+    if (isset($_POST['submit']) && isset($_SESSION['email'])) {
 
 
-if (is_user_logged_in()) {
-    redirect_to('index.php');
-}
+        $email = $_POST['email'];
 
-if (isset($_POST['submit']) && isset($_SESSION['email'])) {
+        $reset_code = generate_reset_code();
 
+        if (isset($_POST['email']))  $email = $_POST['email'];
 
-    $email = $_POST['email'];
+        else $email = $_GET['email'];
 
-    $reset_code = generate_reset_code();
+        if (check_email($email)) {
 
-    if (isset($_POST['email']))  $email = $_POST['email'];
-
-    else $email = $_GET['email'];
-
-    if (check_email($email)) {
-
-        fill_reset_values($email, $reset_code);
-        send_Reset_email($email, $reset_code);
-        echo '<div style="width:min-width; padding: 6px; text-align:center; background-color:#0e171e ;color:white ; position:relative;" class="alert">Email envoyé avec succès.</div>';
-    } else echo '<div style="width:min-width; padding: 6px; text-align:center; background-color:#0e171e ;color:white ; position:relative;" class="alert">Email incorrect.</div>';
+            fill_reset_values($email, $reset_code);
+            send_Reset_email($email, $reset_code);
+            echo '<div style="width:min-width; padding: 6px; text-align:center; background-color:#0e171e ;color:white ; position:relative;" class="alert">Email envoyé avec succès.</div>';
+        } else echo '<div style="width:min-width; padding: 6px; text-align:center; background-color:#0e171e ;color:white ; position:relative;" class="alert">Email incorrect.</div>';
+    }
+} else if (is_get_request()) {
+    [$errors, $inputs] = session_flash('errors', 'inputs');
 }

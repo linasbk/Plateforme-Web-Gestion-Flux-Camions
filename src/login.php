@@ -46,7 +46,10 @@ if (is_post_request()) {
         ]);
     } else if (!is_active($inputs['username'])) {
 
-        $errors['login'] = "Le compte n'a pas été activer par email.";
+        $email = get_email($inputs['username']);
+        $_SESSION['email'] = $email;
+
+        $errors['login'] = "Le compte n'a pas été activer par email. <a href='resend.php' class='forgot-password' name='renvoyer' >Renvoyer?</a>";
 
 
         redirect_with('login.php', [
