@@ -116,7 +116,7 @@ collez le lien suivant dans votre navigateur :</pre>
 
 
 
-function fill_reset_values($email, $reset_code, $reset_expiry =  1600)
+function fill_reset_values($email, $reset_code, $reset_expiry =   20 * 60)
 {
 
 

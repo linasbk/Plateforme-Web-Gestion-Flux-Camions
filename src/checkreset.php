@@ -40,7 +40,15 @@ function find_reset_codes(string $reset_code, string $email)
 }
 
 
+function  reset_at($email)
+{
+    $sql = 'UPDATE users SET reset_at = CURRENT_TIMESTAMP WHERE email = :email ';
 
+    $statement = db()->prepare($sql);
+
+    $statement->bindValue(':email', $email);
+    $statement->execute();
+}
 #code run
 
 
@@ -63,8 +71,10 @@ if (find_reset_codes($_GET['reset_code'], $_GET['email']) != NULL) {
 
         if (secure_password($password)) {
 
+            $email = $_GET['email'];
             change_password($username, $password);
-            delete_reset_code_by_email($_GET['email']);
+            delete_reset_code_by_email($email);
+            reset_at($email);
             echo '<div style="width:min-width; padding: 6px; text-align:center; background-color:#0e171e ;color:white ; position:relative;" class="alert">Mot de passe changé avec succès</div>';
             redirect_with_message(
                 'login.php',
