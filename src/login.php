@@ -38,12 +38,20 @@ if (is_post_request()) {
         ]);
     }
 
+    if (!is_user_exist($inputs['username'])) {
+        $errors['login'] = "Le compte n'exist pas.";
+        redirect_with('login.php', [
+            'errors' => $errors,
+            'inputs' => $inputs
+        ]);
+    }
+
     // if login fails
     if (!login($inputs['username'], $inputs['password'], isset($inputs['remember_me']))) {
 
-        if (!is_user_exist($inputs['username'])) $errors['login'] = "Le compte n'exist pas.";
 
-        $errors['login'] =  "Le compte n'a pas été activer par email.";
+
+        $errors['login'] =  "Le compte n'a pas été activer par l'admin.";
 
         redirect_with('login.php', [
             'errors' => $errors,

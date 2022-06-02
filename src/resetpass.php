@@ -115,7 +115,7 @@ collez le lien suivant dans votre navigateur :</pre>
     $mail->Send();
 }
 
-echo $_SESSION['acivation_link'];
+
 if (isset($_POST['submit']) && isset($_SESSION['email'])) {
 
 

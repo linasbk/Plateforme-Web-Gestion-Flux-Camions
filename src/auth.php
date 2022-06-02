@@ -231,7 +231,7 @@ function is_user_logged_in(): bool
 function is_user_admin(): bool
 {
     $username = $_SESSION['username'];
-    $password = $_SESSION['password'];
+
     $user = find_user_by_username($username);
     if ($user['is_admin'])
         return true;
@@ -328,7 +328,7 @@ function send_activation_email(string $email, string $activation_code): void
 
     // create the activation link
     $activation_link = APP_URL . "/activate.php?email=$email&activation_code=$activation_code";
-    $_SESSION['acivation_link'] = $activation_link;
+
     // set email subject & body
     $subject = 'Veuillez activer votre compte';
     $message = '<!DOCTYPE html>
