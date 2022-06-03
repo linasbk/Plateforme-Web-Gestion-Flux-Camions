@@ -98,7 +98,7 @@ function change_password(string $username, string $password): bool
 
 function find_user_by_username(string $username)
 {
-    $sql = 'SELECT username, password, active, email, id , is_admin , approved
+    $sql = 'SELECT username, password, active, email, id , is_admin , approved ,is_read_admin
             FROM users
             WHERE username=:username';
 

@@ -11,10 +11,6 @@ require __DIR__ . '/../../src/approve.php';
 <div class="main">
     <?php view('sidebar', ['titre' => 'Gérer les utilisateurs']) ?>
 
-
-
-
-
     <?php
     $users = find_users();
     if (users_exist() <= 0) echo "<titre style='margin-top: 8em;;color:#f77d18;'>Aucun résultat trouvée<titre>";
@@ -24,37 +20,38 @@ require __DIR__ . '/../../src/approve.php';
         <tr>
             <th>Id</th>
             <th>Nom d\'utilisateur</th>
-            <th>E-mail</th>
-            <th>Action</th>
-        </tr>';
+            <th>E-mail</th>';
+        if (!is_user_read_admin()) echo '<th>Action</th>';
+        echo '</tr>';
+
         foreach ($users as $user) {
             $labelname = rand(5, 50000);
 
             echo '<tr>
                     <td>' . $user["id"] . '</td>
                     <td>' . $user["username"] . '</td>
-                    <td>' . $user["email"] . '</td>
+                    <td>' . $user["email"] . '</td>';
 
-                    <td>
+            if (!is_user_read_admin()) {
+                echo '<td><form method="post" class="modifier">';
 
-                        <form method="post" class="modifier">';
+                if (!check_approval($user["id"]))
 
-            if (!check_approval($user["id"]))
+                    echo '<label style="color:red !important" for="' . $labelname . '"><i  class="bi bi-lock">';
 
-                echo '<label style="color:red !important" for="' . $labelname . '"><i  class="bi bi-lock">';
+                else echo '<label  style="color:green !important"  for="' . $labelname . '"<i class="bi bi-unlock">';
 
-            else echo '<label  style="color:green !important"  for="' . $labelname . '"<i class="bi bi-unlock">';
-
-            echo ' </i><input class="ver" type="submit" id="' . $labelname . '" name="submit"></label>
-                            <input type="hidden" name="id" value="' . $user["id"] . '">';
+                echo ' </i><input class="ver" type="submit" id="' . $labelname . '" name="submit"></label>
+                                    <input type="hidden" name="id" value="' . $user["id"] . '">';
 
 
-            echo '<label for="delete"><i class="bx bxs-trash"></i></label>
-                            <input class="trashcan" type="submit" id="delete" name="delete">
-
-                        </form>          
-
-                        </td>';
+                echo '<label for="delete"><i class="bx bxs-trash"></i></label>
+                                    <input class="trashcan" type="submit" id="delete" name="delete">
+        
+                                </form>          
+        
+                                </td>';
+            }
         }
         echo '</tr>
         </table>';
