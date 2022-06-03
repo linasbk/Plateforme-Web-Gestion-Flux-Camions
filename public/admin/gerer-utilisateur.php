@@ -28,12 +28,12 @@ require __DIR__ . '/../../src/approve.php';
             $labelname = rand(5, 50000);
 
             echo '<tr>
-                    <td>' . $user["id"] . '</td>
-                    <td>' . $user["username"] . '</td>
-                    <td>' . $user["email"] . '</td>';
+                    <td  class="usertd">' . $user["id"] . '</td>
+                    <td  class="usertd">' . $user["username"] . '</td>
+                    <td  class="usertd">' . $user["email"] . '</td>';
 
             if (!is_user_read_admin()) {
-                echo '<td><form method="post" class="modifier">';
+                echo '<td ><form method="post" class="modifier">';
 
                 if (!check_approval($user["id"]))
 
