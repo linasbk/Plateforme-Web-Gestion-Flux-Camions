@@ -1,11 +1,11 @@
 <?php
 
 require __DIR__ . '/../../src/bootstrap.php';
-require_once __DIR__ . '/../../src/upload.php';
+
 require_admin();
 ?>
 
-<?php view('header', ['title' => "Reconnaissance de plaque d'immatriculation", 'js' => 'vehicule']) ?>
+<?php view('header', ['title' => "Reconnaissance de plaque", 'js' => 'vehicule']) ?>
 
 
 <div class="main">
@@ -16,11 +16,11 @@ require_admin();
 
     <form enctype="multipart/form-data" action="" method="post">
         <div>
-            <label for="file">Select a file:</label>
+            <label for="file">Choisir un fichier:</label>
             <input type="file" id="file" name="file" />
         </div>
         <div>
-            <button type="submit">Upload</button>
+            <button type="submit">Envoyer</button>
         </div>
     </form>
 

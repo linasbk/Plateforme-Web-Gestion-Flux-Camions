@@ -54,7 +54,7 @@ require __DIR__ . '/../../src/vehicule.php';
 
                 <li>
                     <a href="upload-images.php"> <i class='bx bxs-report icon'></i>
-                        <span class="text nav-text">Rapports</span>
+                        <span class="text nav-text">Reconnaissance </span>
                     </a>
                 </li>
 
