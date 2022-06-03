@@ -23,7 +23,6 @@ function hidetab() {
 }
 
 
-  
 
 function impri() {
     var divToPrint = document.getElementById("searchtable");
