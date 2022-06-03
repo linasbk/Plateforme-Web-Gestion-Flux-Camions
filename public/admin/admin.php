@@ -29,21 +29,12 @@ require_admin();
             </div>
         </div>
 
-        <div>
-            <img class="truck " src="../images/truck1.png" alt="truck">
-            <div>
-                <span></span>
-                <p>Véhicules entrés cette semaine</p>
-            </div>
-
-        </div>
-
 
         <div>
             <img class="truck" src="../images/truck2.png" alt="truck">
             <div>
-                <span><?php echo csv_unique('2') ?></span>
-                <p>Totale de véhicules entrés</p>
+                <span><?php echo csv_unique('1') ?></span>
+                <p>Totale de véhicules</p>
             </div>
         </div>
 

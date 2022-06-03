@@ -1,37 +1,28 @@
 <?php
 
 require __DIR__ . '/../../src/bootstrap.php';
+require_once __DIR__ . '/../../src/upload.php';
 require_admin();
 ?>
 
-<?php view('header', ['title' => 'rechercher véhicule', 'js' => 'vehicule']) ?>
+<?php view('header', ['title' => "Reconnaissance de plaque d'immatriculation", 'js' => 'vehicule']) ?>
+
 
 <div class="main">
 
-    <?php view('sidebar', ['titre' => 'Rechercher véhicule']) ?>
+    <?php view('sidebar', ['titre' => "Reconnaissance de plaque d'immatriculation"]) ?>
 
+    <?php flash('upload') ?>
 
-    <form class="form2" action="" method="post" enctype="multipart/form-data" name="bwdatesreport">
-
+    <form enctype="multipart/form-data" action="upload.php" method="post">
         <div>
-            <label for="text-input">La date de début</label>
-            <input type="date" name="fromdate" id="fromdate" required="true">
+            <label for="file">Select a file:</label>
+            <input type="file" id="file" name="file" />
         </div>
-
         <div>
-            <label for="email-input">La date de fin</label>
-            <input type="date" name="todate" required="true">
+            <button type="submit">Upload</button>
         </div>
-
-        <button type="submit" style="width:100%;" onclick="hidetab()" id="search" name="search">Rechercher</button>
     </form>
 
-    <?php if (isset($_POST['search'])) {
 
-        $fromdate = formatdate($_POST['fromdate']);
-        $todate   = formatdate($_POST['todate']);
-
-        csv_table(3, $fromdate);
-    } ?>
-</div>
-<?php view('footer') ?>
+    <?php view('footer') ?>
