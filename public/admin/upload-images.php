@@ -12,7 +12,7 @@ require_admin();
 
     <?php view('sidebar', ['titre' => "Reconnaissance de plaque d'immatriculation"]) ?>
 
-    <?php flash('upload') ?>
+
 
     <form enctype="multipart/form-data" action="" method="post">
         <div>

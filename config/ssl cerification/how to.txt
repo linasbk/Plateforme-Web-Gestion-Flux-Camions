@@ -1,0 +1,2 @@
+put hosts in C:\Windows\System32\drivers\etc
+change ssl for apache

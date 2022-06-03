@@ -117,7 +117,7 @@ require __DIR__ . '/../../src/vehicule.php';
             <!-- utilisateur icon -->
 
             <a href="change-password.php" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <object data="/auth/public/images/images.png" width="60" height="65"> </object></a>
+                <object data="/public/images/images.png" width="60" height="65"> </object></a>
 
 
         </div>
