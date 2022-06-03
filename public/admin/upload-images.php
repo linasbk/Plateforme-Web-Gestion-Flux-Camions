@@ -14,7 +14,7 @@ require_admin();
 
     <?php flash('upload') ?>
 
-    <form enctype="multipart/form-data" action="upload.php" method="post">
+    <form enctype="multipart/form-data" action="" method="post">
         <div>
             <label for="file">Select a file:</label>
             <input type="file" id="file" name="file" />

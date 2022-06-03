@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/inc/flash.php';
 require_once __DIR__ . '/inc/functions.php';
 
 const ALLOWED_FILES = [
