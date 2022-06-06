@@ -1,5 +1,6 @@
 <?php
 
+
 require __DIR__ . '/../../src/bootstrap.php';
 require __DIR__ . '/../../src/upload.php';
 
@@ -26,7 +27,9 @@ require_admin();
         </div>
 
     </form>
-
-
+    <p>votre image: </p>
+    <img src="/public/files/uploads/tocr.jpg" alt="aucune image" style="height: 100%;width: 50%;">
+    <p>votre resultat: </p>
+    <?php echo tocr(); ?>
 
     <?php view('footer') ?>

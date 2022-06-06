@@ -1,4 +1,28 @@
 <?php
+
+use thiagoalessio\TesseractOCR\TesseractOCR;
+
+
+function tocr($output = '../files/uploads/tocr.jpg')
+{
+    //using only php and tesseract
+    $results = (new TesseractOCR($output))
+        ->lang('ara', 'eng')
+        ->hocr()
+        ->run();
+    if ($results)
+        return  $results;
+    else return "aucun resultat";
+}
+
+function tocr2()
+{
+    //using python
+    $pyout = exec('python ../public/py/lpr.py ../public/files/uploads/tocr.jpg');
+    return $pyout;
+}
+
+
 if (isset($_POST['submit'])) {
 
     $extension = pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION);
@@ -8,10 +32,11 @@ if (isset($_POST['submit'])) {
 
         $image = $_FILES['file'];
 
-        $output = "../files/uploads/" . $image['name'];
+        #$output = "../files/uploads/" . $image['name'];
+        $output = "../files/uploads/" . 'tocr.' . $extension;
         move_uploaded_file($image['tmp_name'],   $output);
 
-        echo '<img src="' . $output . '" alt="aucune image" width="120px" height="120px">';
+        /*ocr part*/
     } else {
 
         echo "File is not image";
