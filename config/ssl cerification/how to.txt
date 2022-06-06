@@ -1,2 +1,4 @@
 put hosts in C:\Windows\System32\drivers\etc
 change ssl for apache
+
+put crt in xammp/apache folder

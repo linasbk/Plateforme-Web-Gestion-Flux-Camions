@@ -1,4 +1,4 @@
-flag = 0;
+
 
 
 
@@ -6,24 +6,11 @@ function show(el) {
 
     img = el;
 
-    if (flag == 1) {
-        flag = 0;
         // Set image size to original
         
-        img.classList.remove("scalebig");
-        img.classList.add("scalesmall");
-        img.classList.remove("center");
-     
-
-
-    } else if (flag == 0) {
-        flag = 1;
-        img.classList.remove("scalesmall");
-        img.classList.add("scalebig");
-        img.classList.add("center");
-     
-
-    }
+        img.classList.toggle("scalebig");
+        img.classList.toggle("center");
+        img.classList.toggle("scalesmall");
 
 }
 
@@ -36,7 +23,6 @@ function hidetab() {
 }
 
 
-  
 
 function impri() {
     var divToPrint = document.getElementById("searchtable");
