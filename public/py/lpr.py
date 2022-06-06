@@ -8,7 +8,8 @@ import pytesseract
 from matplotlib import pyplot as plt
 
 # scale up dimensions (520 * 3, 115 * 3) aka MA plate dimensions * 3
-plate_image_dimensions = (1200, 390)
+#plate_image_dimensions = (1200, 390)
+plate_image_dimensions = (1560, 345)
 
 
 def lpr(image, show_steps=False, show_contour=True, show_plates=True, show_hist=True):
@@ -191,12 +192,6 @@ def plate_remove_nonconforming(plate):
             cv2.drawContours(plate, [contour], 0, (0, 0, 0), -1)
 
             tmpimg = cv2.cvtColor(plate.copy(), cv2.COLOR_GRAY2RGB)
-
-            # PRESENTATION DEMO
-            # cv2.drawContours(tmpimg, [box, contour, approx], 0, (0,0,255), 2)
-            # cv2.drawContours(tmpimg, [box, contour, approx], 1, (255,0,0), 2)
-            # cv2.drawContours(tmpimg, [box, contour, approx], 2, (0,255,0), 2)
-            # helper_showwait("Testing", tmpimg)
 
         curr_cnt = curr_hi[curr_cnt][0]
 
