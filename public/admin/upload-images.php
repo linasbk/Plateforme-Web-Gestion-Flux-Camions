@@ -1,6 +1,7 @@
 <?php
 
 require __DIR__ . '/../../src/bootstrap.php';
+require __DIR__ . '/../../src/upload.php';
 
 require_admin();
 ?>
@@ -14,15 +15,17 @@ require_admin();
 
 
 
-    <form enctype="multipart/form-data" action="" method="post">
+
+    <form enctype="multipart/form-data" method="post">
         <div>
             <label for="file">Choisir un fichier:</label>
-            <input type="file" id="file" name="file" />
+            <input type="file" name="file" id="file">
         </div>
         <div>
-            <button type="submit">Envoyer</button>
+            <button type="submit" name="submit" id="submit">Envoyer</button>
         </div>
-    </form>
 
+
+    </form>
 
     <?php view('footer') ?>
