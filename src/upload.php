@@ -17,12 +17,16 @@ function tocr($output = '../files/uploads/tocr.jpg')
     else return "aucun resultat";
 }
 
+
 function tocr2()
 {
     //using python
     $pyout = exec('python ../public/py/lpr.py ../public/files/uploads/tocr.jpg');
+    #$pyout = exec('python ../public/py/finale.py ../public/files/uploads/tocr.jpg');
     return $pyout;
 }
+
+
 
 
 if (isset($_POST['submit'])) {
@@ -34,10 +38,7 @@ if (isset($_POST['submit'])) {
 
         $image = $_FILES['file'];
 
-        #$output = "../files/uploads/" . $image['name'];
         $output = "../files/uploads/" . 'tocr.' . $extension;
         move_uploaded_file($image['tmp_name'],   $output);
-
-        /*ocr part*/
     }
 }

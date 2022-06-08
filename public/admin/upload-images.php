@@ -31,6 +31,6 @@ require_admin();
     <p class="recotext">votre image: </p>
     <img src="/public/files/uploads/tocr.jpg" width="500" height="300" alt="aucune image" class="recoimage">
     <p class="recotext">votre resultat: </p>
-    <?php tocr(); ?>
+    <?php echo tocr(); ?>
 
     <?php view('footer') ?>
