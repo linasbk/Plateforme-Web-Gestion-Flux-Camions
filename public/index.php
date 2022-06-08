@@ -15,12 +15,7 @@ redirect_admin();
             <titre>
                 <strong>Bonjour <?= current_user() ?> </strong>
             </titre>
-            <a href="logout.php">
-                <i class='bx bx-log-out icon'></i>
-                <span class="text nav-text">
-                    <p>Déconnexion</p>
-                </span>
-            </a>
+            <?php redirect_to('okk.php'); ?>
         </div>
     </div>
 </div>
