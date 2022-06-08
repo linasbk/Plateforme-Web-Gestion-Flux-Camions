@@ -307,3 +307,7 @@ if len(sys.argv) > 5:
 
 # print final result (plate's number)
 print(lpr(image, show_steps, show_contour, show_plates, show_hist))
+<<<<<<< HEAD
+=======
+
+>>>>>>> 789c8c68429790aca3bb3ebecdafdcedbb085f9e
