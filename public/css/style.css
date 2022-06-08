@@ -1084,3 +1084,42 @@ body::-webkit-scrollbar-thumb {
     transition: 0.35s ease;
 
 }
+
+.recoimage {
+    border-radius: 10px;
+    border: #2f3437 solid 1px;
+    margin: 2px;
+}
+
+.recotext {
+    font-size: 22px;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.recofile {
+    display: none;
+}
+
+
+.recolabel {
+    font-size: 22px;
+    border: 2px solid #2f3437d8;
+    border-radius: 22px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.recolabel:hover {
+    border: 2px solid #f16e27;
+
+}
+
+.recoresults {
+    font-size: 22px;
+    border: 2px solid #2f3437d8;
+    text-align: center;
+    padding: 10px;
+}

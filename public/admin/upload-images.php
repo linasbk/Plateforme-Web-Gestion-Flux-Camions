@@ -19,17 +19,18 @@ require_admin();
 
     <form enctype="multipart/form-data" method="post">
         <div>
-            <label for="file">Choisir un fichier:</label>
-            <input type="file" name="file" id="file">
+            <label class="recolabel" for="file">Choisir un fichier
+                <input class="recofile" type="file" name="file" id="file">
+            </label>
         </div>
         <div>
             <button type="submit" name="submit" id="submit">Envoyer</button>
         </div>
 
     </form>
-    <p>votre image: </p>
-    <img src="/public/files/uploads/tocr.jpg" alt="aucune image" style="height: 100%;width: 50%;">
-    <p>votre resultat: </p>
-    <?php echo tocr(); ?>
+    <p class="recotext">votre image: </p>
+    <img src="/public/files/uploads/tocr.jpg" width="500" height="300" alt="aucune image" class="recoimage">
+    <p class="recotext">votre resultat: </p>
+    <?php tocr(); ?>
 
     <?php view('footer') ?>

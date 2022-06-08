@@ -2,6 +2,7 @@
 
 use thiagoalessio\TesseractOCR\TesseractOCR;
 
+use function PHPSTORM_META\type;
 
 function tocr($output = '../files/uploads/tocr.jpg')
 {
@@ -10,6 +11,7 @@ function tocr($output = '../files/uploads/tocr.jpg')
         ->lang('ara', 'eng')
         ->hocr()
         ->run();
+
     if ($results)
         return  $results;
     else return "aucun resultat";
@@ -37,8 +39,5 @@ if (isset($_POST['submit'])) {
         move_uploaded_file($image['tmp_name'],   $output);
 
         /*ocr part*/
-    } else {
-
-        echo "File is not image";
     }
 }
