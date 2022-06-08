@@ -1,0 +1,774 @@
+/*google roboto font*/
+
+@font-face {
+    font-family: Roboto;
+    src: url(../font/Roboto-Light.ttf);
+}
+
+/*pour toutes les pages hpyigoti_*/
+
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+
+    overflow-x: hidden;
+
+}
+
+
+
+body {
+    scrollbar-width: none;
+
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* la page index et la page  oublier le mot de passe*/
+
+.centre {
+    /* pour centrer la boite login */
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+/* la page se connecter*/
+
+.indexbody {
+    background: url('../images/background1.jpeg') no-repeat center;
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+.login-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-contenue {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    padding: 60px 40px 40px;
+    background: rgba(0, 0, 0, 0.589);
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+/*
+.form-contenue::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    transform: skewX(-28deg);
+    transform-origin: bottom left;
+    border-radius: 10px;
+    pointer-events: none;
+
+}
+
+.register::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    transform: skewX(156.5deg);
+    transform-origin: bottom left;
+    border-radius: 10px;
+    pointer-events: none;
+
+}
+*/
+.card-header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px 5px 40px 5px;
+    font-size: 1.1em;
+    color: rgb(223, 224, 224);
+    box-shadow: 2px 3px 8px #f77d18;
+    border-radius: 50px;
+}
+
+.card-header .form-header {
+    flex: 50%;
+    text-align: center;
+    padding: 20px 10px;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.card-header .form-header.active {
+    box-shadow: inset 1px 1px 2px rgba(236, 144, 7, 0.596),
+        inset -1px 1px 2px rgba(236, 144, 7, 0.596),
+        inset -1px 1px 2px rgba(236, 144, 7, 0.596),
+        inset -1px 1px 2px rgba(236, 144, 7, 0.596);
+    border-color: #f77d18;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+}
+
+.form-contenue .input-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    margin-top: 13px;
+}
+
+.form-contenue .input-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+.form-contenue .input-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: .3s ease-out;
+}
+
+.form-contenue .input-group input:focus+label,
+.form-contenue .input-group input:valid+label {
+    transform: translateY(-18px);
+    color: #f77d18;
+    font-size: .8rem;
+}
+
+.submit-btn {
+    margin-top: 14px;
+    border: 1px solid transparent;
+    outline: none;
+    background: #f77d18;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.submit-btn:hover {
+    box-shadow: 3px 5px 25px #ff9f3c;
+    transform: translateY(-5px);
+}
+
+.forgot-pw {
+    color: inherit;
+}
+
+#forgot-pw {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+#rest {
+
+    background: rgb(46, 46, 46);
+    bottom: 90px;
+
+}
+
+h2 {
+    margin-bottom: 1em;
+}
+
+#forgot-pw:target {
+    height: 100%;
+    opacity: 1;
+}
+
+.close1 {
+    position: absolute;
+    right: 1.5rem;
+    top: 0.5rem;
+    font-size: 2rem;
+    font-weight: 900;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-body {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#loginForm {
+    flex: 0 0 100%;
+}
+
+.toggleForm {
+    display: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+
+
+
+
+.indextitre {
+    /* pour le titre */
+
+    font-size: 22px;
+    padding-bottom: 1.5em;
+    color: white;
+
+}
+
+
+input {
+    transition: var(--tran-03);
+    border: solid 2px #f18248;
+    border-radius: 6px;
+    font-size: 18px;
+    padding: 8px;
+    margin-right: 0px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+
+}
+
+/* pour le button */
+
+button {
+
+    color: white;
+    border-radius: 6px;
+    padding: 9px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    background-color: #2f3437d8;
+
+}
+
+
+
+button:hover {
+    transition: var(--tran-03);
+    background-color: #f77d18;
+
+}
+
+button:active {
+    transition: var(--tran-03);
+    opacity: .9;
+
+}
+
+
+a button {
+    transition: var(--tran-03);
+    width: 100%;
+
+}
+
+.indexbody label a:hover {
+
+    color: #f77d18;
+
+}
+
+/*body*/
+body {
+    background-color: var(--body-color);
+
+}
+
+
+#header {
+    /* pour le header */
+
+
+    box-shadow: none;
+    color: black;
+    border: none;
+
+}
+
+
+
+/* pour les autres pages */
+
+
+#header {
+    /*pour le header */
+    display: flex;
+    height: 60px;
+    width: 100%;
+
+    position: relative;
+    justify-content: space-between;
+    border-bottom: solid 1px #575c5fab;
+    box-shadow: 0px 2px 4px 0px rgba(145, 144, 144, 0.096);
+    z-index: 2;
+
+}
+
+
+
+.utilisateur img {
+    /* pour le logo d'utilisateur */
+
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    padding-right: 10px;
+    right: 0%;
+    width: 3.5em;
+    padding-bottom: 20px;
+
+}
+
+
+/* pour le footer*/
+
+.footer {
+
+    display: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer div {
+
+    padding: 5px 2px;
+}
+
+
+
+/* sidebar */
+
+
+:root {
+
+    --body-color: #E4E9F7;
+    --aside-color: #2f3437;
+    --primary-color: #f77d18;
+    --primary-color-light: #515558;
+    --toggle-color: #fff;
+    --text-color: rgb(230, 230, 230);
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+
+::selection {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+body.dark {
+    --body-color: #18191a;
+    --aside-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+}
+
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--aside-color);
+    transition: var(--tran-04);
+}
+
+body.dark .switch::before {
+    left: 20px;
+}
+
+
+
+/* pour centrer les pages */
+
+body .main {
+    display: flex;
+
+
+    flex-direction: row;
+}
+
+/* pour la page dashboard*/
+
+.dashboard {
+
+    align-items: flex-start;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+
+.dashboard>div {
+    transition: var(--tran-03);
+    display: flex;
+    color: #242a2a;
+    justify-content: space-between;
+    margin: 16px;
+    margin-top: 4em;
+    border: solid 2px #242a2a;
+    border-radius: 4px;
+    padding: 25px 5px 25px 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard>div:hover {
+    transition: var(--tran-03);
+    border: solid 2px #f16e27;
+}
+
+.dashboard>div>div {
+    margin-left: 14px;
+
+}
+
+.dashboard div span {
+
+    color: #242a2a;
+    font-weight: bolder;
+    font-size: 22px;
+
+}
+
+.dashboard div p {
+    color: #242a2a;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.dashboard i {
+
+    padding-left: 8px;
+    color: #f16e27;
+
+}
+
+
+
+
+/*pour les autre page*/
+.contenue {
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.contenue titre {
+    transition: var(--tran-03);
+    text-align: center;
+    color: #242a2a;
+    font-size: 50px;
+    padding: 26px 16px;
+}
+
+
+.contenue titre:hover {
+    transition: var(--tran-03);
+    color: #ff6b00;
+
+}
+
+.background {
+    flex: 2;
+}
+
+.contenue .aucun {
+    text-align: center;
+    color: #f16e27;
+    font-size: 18px;
+    padding: 26px 16px;
+}
+
+
+/*pour les formulaire*/
+
+.contenue form:not(.modifier) {
+    transition: var(--tran-03);
+    color: white;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+
+    border: solid 2px #555a5e8e;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+
+}
+
+
+.contenue form:not(.modifier):hover {
+    transition: var(--tran-03);
+    border: solid 2px #ff6b00;
+}
+
+.modifier .modbutton {
+    padding: 8px 16px;
+    margin-bottom: 6px;
+}
+
+.contenue .form2 {
+
+    transform: translate(+8%, 0);
+
+}
+
+
+.contenue thead>tr {
+
+    border: none;
+}
+
+
+.contenue>form>div {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contenue label {
+    color: #242a2a;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+
+
+}
+
+.contenue input {
+    transition: var(--tran-03);
+    color: #242a2a;
+    font-weight: bolder;
+    border: solid 2px #242a2a;
+    background-color: #dbdbdb;
+
+
+}
+
+
+.contenue input:hover {
+    border: solid 2px #ff6b00;
+
+}
+
+
+
+.contenue h4 {
+    /*pour la page search*/
+    padding: 16px;
+    color: #515558;
+    text-align: center;
+}
+
+/*pour toutes les table*/
+
+
+
+.contenue table {
+    transition: var(--tran-03);
+    color: #242a2a;
+    border: solid 2px #555a5e8e;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-collapse: collapse;
+
+
+}
+
+
+.contenue table tr td {
+    text-align: center;
+
+}
+
+
+
+.contenue textarea {
+    font-size: 20px;
+    width: 100%;
+}
+
+.contenue .wrapper {
+    overflow-wrap: anywhere;
+}
+
+.contenue table th {
+    text-align: center;
+    font-size: 20px;
+    background-color: #2f3437bd;
+    color: white;
+    padding: 8px 10px;
+
+
+}
+
+
+.contenue table td {
+    transition: var(--tran-03);
+
+    overflow-wrap: anywhere;
+    font-size: 20PX;
+
+    text-align: center;
+    padding: 0px 8px;
+}
+
+
+
+.contenue table tr:hover td {
+    transition: var(--tran-03);
+    background-color: #ccc;
+
+}
+
+.contenue table td a:hover {
+
+    color: #f77d18;
+}
+
+
+
+.centerbutton {
+    align-self: center;
+}
+
+.contenue select {
+    font-size: 22px;
+    color: #242a2a;
+    background-color: #dbdbdb;
+    border: 2px solid #f77d18;
+    border: solid 2px #f18248;
+    border-radius: 6px;
+    font-size: 20PX;
+    padding: 8px;
+    margin-right: 0px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.contenue select:hover {
+    border: solid 2px #fa7933;
+
+}
+
+.insfooter {
+
+    font-size: 14px;
+    margin-top: 6px;
+
+}
+
+.insfooter>a {
+    text-decoration: underline;
+}
+
+.insfooter>a:hover {
+    color: #f77d18;
+}
+
+.input-group small {
+    color: #ff1818e8;
+}
+
+.hideformright {
+    height: 100%;
+    z-index: 5;
+}
+
+.forgot-password {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.forgot-password:hover {
+    color: #f16e27;
+    text-decoration: underline;
+}
