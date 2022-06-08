@@ -88,6 +88,7 @@ if (is_post_request()) {
 
     if (is_user_admin() && is_user_approved()) redirect_to('admin/admin.php');
 
+
     if (is_user_approved()) redirect_to('index.php');
 } else if (is_get_request()) {
     [$errors, $inputs] = session_flash('errors', 'inputs');
